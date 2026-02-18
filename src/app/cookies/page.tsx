@@ -106,8 +106,8 @@ export default function CookiesPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">7. Contact Us</h2>
                 <p>If you have questions about our Cookie Policy:</p>
-                <p className="mt-2">Email: <a href="mailto:hello@overcode.ru" className="text-accent-purple hover:underline">hello@overcode.ru</a></p>
-                <p>Telegram: <a href="https://t.me/overcode" className="text-accent-purple hover:underline">@overcode</a></p>
+                <p className="mt-2">Email: <a href="mailto:abec_senjuro@mail.ru" className="text-accent-purple hover:underline">abec_senjuro@mail.ru</a></p>
+                <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>
           ) : (
@@ -177,8 +177,8 @@ export default function CookiesPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">7. Контакты</h2>
                 <p>Если у вас есть вопросы по нашей Политике cookie:</p>
-                <p className="mt-2">Email: <a href="mailto:hello@overcode.ru" className="text-accent-purple hover:underline">hello@overcode.ru</a></p>
-                <p>Telegram: <a href="https://t.me/overcode" className="text-accent-purple hover:underline">@overcode</a></p>
+                <p className="mt-2">Email: <a href="mailto:abec_senjuro@mail.ru" className="text-accent-purple hover:underline">abec_senjuro@mail.ru</a></p>
+                <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>
           )}

@@ -30,8 +30,8 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://t.me/overcode" target="_blank" rel="noopener noreferrer" className="text-text-secondary text-sm hover:text-text-primary transition-colors">Telegram</a>
-            <a href="mailto:hello@overcode.ru" className="text-text-secondary text-sm hover:text-text-primary transition-colors">Email</a>
+            <a href="https://t.me/hosjpps" target="_blank" rel="noopener noreferrer" className="text-text-secondary text-sm hover:text-text-primary transition-colors">Telegram</a>
+            <a href="mailto:abec_senjuro@mail.ru" className="text-text-secondary text-sm hover:text-text-primary transition-colors">Email</a>
           </div>
         </div>
 

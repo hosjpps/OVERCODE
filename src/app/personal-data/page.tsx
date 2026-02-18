@@ -155,8 +155,8 @@ export default function PersonalDataPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">11. Contact Information</h2>
                 <p>For questions regarding personal data processing:</p>
-                <p className="mt-2">Email: <a href="mailto:hello@overcode.ru" className="text-accent-purple hover:underline">hello@overcode.ru</a></p>
-                <p>Telegram: <a href="https://t.me/overcode" className="text-accent-purple hover:underline">@overcode</a></p>
+                <p className="mt-2">Email: <a href="mailto:abec_senjuro@mail.ru" className="text-accent-purple hover:underline">abec_senjuro@mail.ru</a></p>
+                <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>
           ) : (
@@ -275,8 +275,8 @@ export default function PersonalDataPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">11. Контактная информация</h2>
                 <p>По вопросам обработки персональных данных:</p>
-                <p className="mt-2">Email: <a href="mailto:hello@overcode.ru" className="text-accent-purple hover:underline">hello@overcode.ru</a></p>
-                <p>Telegram: <a href="https://t.me/overcode" className="text-accent-purple hover:underline">@overcode</a></p>
+                <p className="mt-2">Email: <a href="mailto:abec_senjuro@mail.ru" className="text-accent-purple hover:underline">abec_senjuro@mail.ru</a></p>
+                <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>
           )}
