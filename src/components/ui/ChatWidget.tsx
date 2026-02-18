@@ -25,7 +25,7 @@ export default function ChatWidget({ onClose, showHeader = true, className = '' 
   ]);
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
-  const chatEnd = useRef<HTMLDivElement>(null);
+  const chatContainer = useRef<HTMLDivElement>(null);
   const prevLang = useRef(lang);
 
   // Reset chat when language changes
@@ -38,7 +38,9 @@ export default function ChatWidget({ onClose, showHeader = true, className = '' 
   }, [lang]);
 
   useEffect(() => {
-    chatEnd.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (chatContainer.current) {
+      chatContainer.current.scrollTop = chatContainer.current.scrollHeight;
+    }
   }, [messages, typing]);
 
   const sendMessage = async () => {
@@ -89,7 +91,7 @@ export default function ChatWidget({ onClose, showHeader = true, className = '' 
       )}
 
       {/* Messages */}
-      <div className="flex-1 p-4 overflow-y-auto space-y-3 scrollbar-hide">
+      <div ref={chatContainer} className="flex-1 p-4 overflow-y-auto space-y-3 scrollbar-hide">
         {messages.map((msg, i) => (
           <div key={i} className={`flex items-start gap-2 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
             {msg.role === 'bot' && (
@@ -123,7 +125,6 @@ export default function ChatWidget({ onClose, showHeader = true, className = '' 
             </motion.div>
           )}
         </AnimatePresence>
-        <div ref={chatEnd} />
       </div>
 
       {/* Input */}
