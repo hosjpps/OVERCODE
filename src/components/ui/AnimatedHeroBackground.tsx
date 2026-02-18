@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 
 interface Blob {
   x: number;
@@ -30,6 +30,11 @@ export default function AnimatedHeroBackground() {
   const particlesRef = useRef<Particle[]>([]);
   const animFrameRef = useRef<number>(0);
   const timeRef = useRef(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   const initBlobs = useCallback((width: number, height: number) => {
     const colors = [
@@ -67,6 +72,8 @@ export default function AnimatedHeroBackground() {
   }, []);
 
   useEffect(() => {
+    if (isMobile) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -224,7 +231,19 @@ export default function AnimatedHeroBackground() {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMouse);
     };
-  }, [initBlobs, initParticles]);
+  }, [isMobile, initBlobs, initParticles]);
+
+  // Mobile: static CSS gradient instead of canvas
+  if (isMobile) {
+    return (
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background: 'radial-gradient(ellipse at 30% 40%, rgba(124,58,237,0.25) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(236,72,153,0.18) 0%, transparent 55%), radial-gradient(ellipse at 50% 80%, rgba(6,182,212,0.15) 0%, transparent 50%)',
+        }}
+      />
+    );
+  }
 
   return (
     <canvas

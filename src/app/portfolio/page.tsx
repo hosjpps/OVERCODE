@@ -113,11 +113,12 @@ export default function PortfolioPage() {
                 >
                   {/* Live preview */}
                   <div className="relative h-[220px] bg-gradient-to-br from-accent-purple/10 to-accent-pink/5 overflow-hidden">
+                    {/* iframe — desktop only */}
                     {!isExternal && (
                       <iframe
                         src={project.url}
                         title={project.name}
-                        className="pointer-events-none origin-top-left"
+                        className="pointer-events-none origin-top-left hidden md:block"
                         style={{
                           width: '1280px',
                           height: '900px',

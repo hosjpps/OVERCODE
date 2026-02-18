@@ -22,9 +22,9 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
       whileHover={{ scale: 1.02 }}
       className="relative flex-shrink-0 w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden group snap-start"
     >
-      {/* Live iframe preview */}
+      {/* Live iframe preview — desktop only */}
       {!isExternal && (
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden hidden md:block">
           <iframe
             src={project.url}
             title={project.name}
@@ -42,15 +42,13 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
         </div>
       )}
 
-      {/* Fallback for Telegram links */}
-      {isExternal && (
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(236,72,153,0.12) 50%, rgba(6,182,212,0.1) 100%)',
-          }}
-        />
-      )}
+      {/* Gradient card — mobile fallback + Telegram links */}
+      <div
+        className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}
+        style={{
+          background: 'linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(236,72,153,0.12) 50%, rgba(6,182,212,0.1) 100%)',
+        }}
+      />
 
       {/* Gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/20 to-transparent z-10" />

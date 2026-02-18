@@ -21,13 +21,14 @@ export default function FloatingElements() {
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
-    const count = isMobile ? 10 : 22;
+    if (isMobile) return; // Skip on mobile for performance
+    const count = 22;
     const items: Particle[] = Array.from({ length: count }, (_, i) => ({
       id: i,
       symbol: CODE_SYMBOLS[i % CODE_SYMBOLS.length],
       x: Math.random() * 95 + 2,
       y: Math.random() * 95 + 2,
-      size: isMobile ? 10 + Math.random() * 4 : 11 + Math.random() * 7,
+      size: 11 + Math.random() * 7,
       duration: 18 + Math.random() * 22,
       delay: Math.random() * -20,
       opacity: 0.07 + Math.random() * 0.1,

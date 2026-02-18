@@ -7,16 +7,22 @@ import './globals.css';
 const inter = Inter({
   variable: '--font-sans',
   subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
 });
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
   subsets: ['latin'],
+  weight: ['600', '700'],
+  display: 'swap',
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
-  subsets: ['latin', 'cyrillic'],
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
