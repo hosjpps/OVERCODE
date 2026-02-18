@@ -1,0 +1,211 @@
+export const projects = [
+  { id: 1, name: 'Surikov Marketing', category: 'Лендинг', categoryEn: 'Landing', url: 'https://surikov-marketing.ru', description: 'Маркетинговое агентство', descriptionEn: 'Marketing agency' },
+  { id: 2, name: 'Barbershop', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-barbershop-landing-page-opal.vercel.app', description: 'Барбершоп', descriptionEn: 'Barbershop' },
+  { id: 3, name: 'Pho Bo Franchise', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-pho-bo-franshise-redesign-2.vercel.app', description: 'Франшиза кафе', descriptionEn: 'Cafe franchise' },
+  { id: 4, name: 'Pho Bo Cafe', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-phobo-cafe-redesign.vercel.app', description: 'Вьетнамское кафе', descriptionEn: 'Vietnamese cafe' },
+  { id: 5, name: 'MedLife Clinic', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-med-life-clinic-website.vercel.app', description: 'Медицинская клиника', descriptionEn: 'Medical clinic' },
+  { id: 6, name: 'La Dolce Vita', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-la-dolce-vita-landing-page.vercel.app', description: 'Ресторан', descriptionEn: 'Restaurant' },
+  { id: 7, name: 'Orlov Logistics', category: 'Лендинг', categoryEn: 'Landing', url: 'https://orlovlogistics.ru', description: 'Логистическая компания', descriptionEn: 'Logistics company' },
+  { id: 8, name: 'Brewery', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-brewery-landing-page.vercel.app', description: 'Пивоварня', descriptionEn: 'Brewery' },
+  { id: 9, name: 'Architect Portfolio', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-architect-portfolio-website-six.vercel.app', description: 'Архитектурное бюро', descriptionEn: 'Architecture firm' },
+  { id: 10, name: 'Corporate Site', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-corporate-website-build-pied.vercel.app', description: 'Корпоративный сайт', descriptionEn: 'Corporate website' },
+  { id: 11, name: 'Medical Platform', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-medical-website-builder-five.vercel.app', description: 'Медицинская платформа', descriptionEn: 'Medical platform' },
+  { id: 12, name: 'E-commerce Store', category: 'Интернет-магазин', categoryEn: 'E-commerce', url: 'https://store-l3hb.vercel.app', description: 'Онлайн-магазин', descriptionEn: 'Online store' },
+  { id: 13, name: 'Fashion Store', category: 'Интернет-магазин', categoryEn: 'E-commerce', url: 'https://front-navy-nine.vercel.app', description: 'Магазин одежды', descriptionEn: 'Fashion store' },
+  { id: 14, name: 'Metrics Dashboard', category: 'Веб-приложение', categoryEn: 'Web App', url: 'https://metrics-dashboard-seven.vercel.app', description: 'Дашборд метрик', descriptionEn: 'Metrics dashboard' },
+  { id: 15, name: 'Business Analyst', category: 'Веб-приложение', categoryEn: 'Web App', url: 'https://business-analyst-beige.vercel.app', description: 'Бизнес-аналитика', descriptionEn: 'Business analytics' },
+  { id: 16, name: 'AI Mastery Academy', category: 'Веб-приложение', categoryEn: 'Web App', url: 'https://ai-mastery-academy-five.vercel.app', description: 'Образовательная платформа', descriptionEn: 'Education platform' },
+  { id: 17, name: 'Pho Bo Mini App', category: 'Telegram Mini App', categoryEn: 'Telegram Mini App', url: 'https://t.me/Pho_bo_cafe_bot', description: 'Кафе в Telegram', descriptionEn: 'Cafe in Telegram' },
+  { id: 18, name: 'CaloriAI', category: 'AI-бот', categoryEn: 'AI Bot', url: 'https://t.me/CaloriAI1_bot', description: 'Подсчёт калорий через AI', descriptionEn: 'AI calorie tracking' },
+];
+
+export const services = [
+  {
+    id: 1,
+    icon: 'Code2' as const,
+    title: 'Сайты & Платформы',
+    titleEn: 'Websites & Platforms',
+    description: 'Лендинги, многостраничники, интернет-магазины, веб-приложения. На современном стеке с высокой скоростью загрузки.',
+    descriptionEn: 'Landings, multi-page sites, e-commerce, web apps. Built on a modern stack with blazing-fast load times.',
+    features: ['Лендинги с высокой конверсией', 'Многостраничные корпоративные сайты', 'Интернет-магазины с каталогом и оплатой', 'Веб-приложения (дашборды, платформы, CRM)', 'Адаптив под все устройства', 'SEO-оптимизация'],
+    featuresEn: ['High-conversion landing pages', 'Multi-page corporate websites', 'E-commerce with catalog and payments', 'Web apps (dashboards, platforms, CRM)', 'Responsive across all devices', 'SEO optimization'],
+    stack: 'Next.js, React, TypeScript, Tailwind CSS, Vercel',
+    price: 'от 30 000 ₽ до 300 000 ₽',
+    priceEn: 'from $400 to $4,000',
+    timeline: 'от 3 дней до 4 недель',
+    timelineEn: 'from 3 days to 4 weeks',
+    gridSpan: 2,
+  },
+  {
+    id: 2,
+    icon: 'Bot' as const,
+    title: 'AI-боты & Ассистенты',
+    titleEn: 'AI Bots & Assistants',
+    description: 'Текстовые и голосовые AI-ассистенты, которые работают 24/7. Обрабатывают заявки, отвечают клиентам, квалифицируют лиды.',
+    descriptionEn: 'Text and voice AI assistants working 24/7. Process leads, answer clients, qualify prospects.',
+    features: ['AI-боты для Telegram, WhatsApp, сайта', 'Голосовые AI-ассистенты для приёма звонков', 'FAQ-боты с обучением на ваших данных', 'AI-квалификация и обработка заявок', 'RAG-системы на базе ваших документов', 'Telegram Mini Apps'],
+    featuresEn: ['AI bots for Telegram, WhatsApp, website', 'Voice AI assistants for calls', 'FAQ bots trained on your data', 'AI lead qualification and processing', 'RAG systems based on your documents', 'Telegram Mini Apps'],
+    stack: 'Claude AI, Vercel AI SDK, n8n, Python, Telegram Bot API',
+    price: 'от 40 000 ₽ до 200 000 ₽',
+    priceEn: 'from $550 to $2,700',
+    timeline: 'от 5 дней до 3 недель',
+    timelineEn: 'from 5 days to 3 weeks',
+    gridSpan: 2,
+  },
+  {
+    id: 3,
+    icon: 'Zap' as const,
+    title: 'Автоматизация процессов',
+    titleEn: 'Process Automation',
+    description: 'Связываем ваши системы в единый поток. CRM, почта, маркетплейсы, бухгалтерия — всё работает без ручного труда.',
+    descriptionEn: 'We connect your systems into a single flow. CRM, email, marketplaces, accounting — everything runs without manual work.',
+    features: ['Автоматизация на n8n (500+ интеграций)', 'Обработка заявок из форм, почты, мессенджеров', 'Синхронизация данных между системами', 'Парсинг и мониторинг цен конкурентов', 'Интеграция CRM, маркетплейсов, бухгалтерии', 'RPA для рутинных процессов'],
+    featuresEn: ['n8n automation (500+ integrations)', 'Lead processing from forms, email, messengers', 'Data sync between systems', 'Competitor price parsing and monitoring', 'CRM, marketplace, accounting integration', 'RPA for routine tasks'],
+    stack: 'n8n, Make, Python, API integrations',
+    price: 'от 25 000 ₽ до 150 000 ₽',
+    priceEn: 'from $350 to $2,000',
+    timeline: 'от 3 дней до 3 недель',
+    timelineEn: 'from 3 days to 3 weeks',
+    gridSpan: 2,
+  },
+  {
+    id: 4,
+    icon: 'BarChart3' as const,
+    title: 'Аналитика & Дашборды',
+    titleEn: 'Analytics & Dashboards',
+    description: 'Превращаем данные в решения. Интерактивные дашборды, прогнозная аналитика, мониторинг метрик в реальном времени.',
+    descriptionEn: 'Turning data into decisions. Interactive dashboards, predictive analytics, real-time metrics monitoring.',
+    features: ['Дашборды в Google Data Studio / Looker', 'Кастомные дашборды на React', 'Аналитика продаж, конверсий, среднего чека', 'Прогнозирование спроса', 'Оперативные отчеты с автоматическими алертами', 'Синхронизация данных из CRM, маркетплейсов'],
+    featuresEn: ['Dashboards in Google Data Studio / Looker', 'Custom React dashboards', 'Sales, conversion, average check analytics', 'Demand forecasting', 'Operational reports with auto alerts', 'Data sync from CRM, marketplaces'],
+    stack: 'React, Python, Google Data Studio, SQL',
+    price: 'от 40 000 ₽ до 200 000 ₽',
+    priceEn: 'from $550 to $2,700',
+    timeline: 'от 1 до 4 недель',
+    timelineEn: 'from 1 to 4 weeks',
+    gridSpan: 3,
+  },
+  {
+    id: 5,
+    icon: 'Play' as const,
+    title: 'Креатив & Продакшн',
+    titleEn: 'Creative & Production',
+    description: 'Промо-ролики, рекламные креативы, motion-графика. Контент, который цепляет внимание и продаёт.',
+    descriptionEn: 'Promo videos, ad creatives, motion graphics. Content that grabs attention and sells.',
+    features: ['Промо-ролики для бизнеса', 'Рекламные креативы для таргета', 'Motion-графика и анимация', 'Визуальный контент для соцсетей', 'Презентации и pitch-деки'],
+    featuresEn: ['Business promo videos', 'Ad creatives for targeting', 'Motion graphics and animation', 'Visual content for social media', 'Presentations and pitch decks'],
+    stack: 'After Effects, Premiere Pro, Figma, AI tools',
+    price: 'от 15 000 ₽ до 100 000 ₽',
+    priceEn: 'from $200 to $1,350',
+    timeline: 'от 2 дней до 2 недель',
+    timelineEn: 'from 2 days to 2 weeks',
+    gridSpan: 3,
+  },
+];
+
+export const counters = [
+  { value: 20, suffix: '+', label: 'проектов реализовано', labelEn: 'projects delivered' },
+  { value: 3, suffix: ' дня', suffixEn: ' days', label: 'среднее время MVP', labelEn: 'average MVP delivery' },
+  { value: 24, suffix: '/7', label: 'работают наши AI-боты', labelEn: 'our AI bots work' },
+  { value: 98, suffix: '%', label: 'клиентов возвращаются', labelEn: 'clients come back' },
+];
+
+export const packages = [
+  {
+    id: 1, name: 'Быстрый старт', nameEn: 'Quick Start',
+    price: 'от 30 000 ₽', priceEn: 'from $400',
+    idealFor: 'Малый бизнес, старт продаж, тестирование гипотезы',
+    idealForEn: 'Small business, sales launch, hypothesis testing',
+    features: ['Лендинг с высокой конверсией', 'Мобильная адаптация', 'Базовая SEO-оптимизация', 'Подключение аналитики', 'Форма заявки / связь с Telegram'],
+    featuresEn: ['High-conversion landing page', 'Mobile responsive', 'Basic SEO optimization', 'Analytics integration', 'Contact form / Telegram integration'],
+    timeline: '3-7 дней', timelineEn: '3-7 days', popular: false,
+  },
+  {
+    id: 2, name: 'Рост', nameEn: 'Growth',
+    price: 'от 80 000 ₽', priceEn: 'from $1,100',
+    idealFor: 'Бизнес, который хочет автоматизировать продажи и масштабироваться',
+    idealForEn: 'Business looking to automate sales and scale',
+    features: ['Сайт (лендинг или многостраничник)', 'AI-бот для обработки заявок', 'Автоматизация процессов (n8n)', 'Интеграция с CRM', 'Аналитика и дашборд', '1 месяц поддержки'],
+    featuresEn: ['Website (landing or multi-page)', 'AI bot for lead processing', 'Process automation (n8n)', 'CRM integration', 'Analytics and dashboard', '1 month support'],
+    timeline: '2-3 недели', timelineEn: '2-3 weeks', popular: true,
+  },
+  {
+    id: 3, name: 'Трансформация', nameEn: 'Transformation',
+    price: 'от 200 000 ₽', priceEn: 'from $2,700',
+    idealFor: 'Средний бизнес, полная цифровая экосистема',
+    idealForEn: 'Medium business, complete digital ecosystem',
+    features: ['Всё из пакета "Рост"', 'Веб-приложение / SaaS-платформа', 'AI-ассистент с обучением на ваших данных', 'Полная автоматизация процессов', 'BI-дашборды и прогнозная аналитика', '3 месяца поддержки и развития'],
+    featuresEn: ['Everything from "Growth" package', 'Web application / SaaS platform', 'AI assistant trained on your data', 'Complete process automation', 'BI dashboards and predictive analytics', '3 months support and development'],
+    timeline: '1-2 месяца', timelineEn: '1-2 months', popular: false,
+  },
+];
+
+export const processSteps = [
+  { number: '01', title: 'Брифинг', titleEn: 'Briefing', description: 'Обсуждаем задачу, анализируем бизнес, определяем цели и метрики успеха. Бесплатно, 30-60 минут.', descriptionEn: 'Discuss the task, analyze business, define goals and success metrics. Free, 30-60 minutes.' },
+  { number: '02', title: 'Прототип & Дизайн', titleEn: 'Prototype & Design', description: 'Создаём прототип и согласовываем дизайн. Вы видите результат до начала разработки.', descriptionEn: 'Create prototype and approve design. You see results before development starts.' },
+  { number: '03', title: 'Разработка', titleEn: 'Development', description: 'Собираем решение на современном стеке. Еженедельные демо — вы видите прогресс.', descriptionEn: 'Build the solution on a modern stack. Weekly demos — you see the progress.' },
+  { number: '04', title: 'Тестирование & Запуск', titleEn: 'Testing & Launch', description: 'Тестируем, деплоим, настраиваем аналитику. Убеждаемся что всё работает как надо.', descriptionEn: 'Test, deploy, set up analytics. Make sure everything works perfectly.' },
+  { number: '05', title: 'Поддержка & Рост', titleEn: 'Support & Growth', description: 'Мониторим метрики, оптимизируем, развиваем. Система растёт с вашим бизнесом.', descriptionEn: 'Monitor metrics, optimize, develop. The system grows with your business.' },
+];
+
+export const cases = [
+  {
+    metric: '+20%', metricLabel: 'посещений', metricLabelEn: 'visits',
+    description: 'Внедрили AI-бот для записей + Telegram-напоминания. Автоматизирована обработка всех заявок 24/7.',
+    descriptionEn: 'Implemented AI bot for bookings + Telegram reminders. All leads processed 24/7.',
+    tags: ['AI-бот', 'Telegram', 'Автоматизация'], tagsEn: ['AI Bot', 'Telegram', 'Automation'],
+  },
+  {
+    metric: '+25%', metricLabel: 'заказов', metricLabelEn: 'orders',
+    description: 'AI-бот автоматически отвечает на запросы, уточняет детали, согласовывает время замера.',
+    descriptionEn: 'AI bot auto-responds to inquiries, clarifies details, schedules fitting.',
+    tags: ['AI-бот', 'Интеграция с Avito'], tagsEn: ['AI Bot', 'Avito Integration'],
+  },
+  {
+    metric: '+30', metricLabel: 'лидов/мес', metricLabelEn: 'leads/mo',
+    description: 'Калькулятор растаможки в Telegram + автоматический расчёт логистики. Конверсия в сделку — 42%.',
+    descriptionEn: 'Customs calculator in Telegram + auto logistics calculation. Deal conversion — 42%.',
+    tags: ['Telegram Mini App', 'Автоматизация', 'Лендинг'], tagsEn: ['Telegram Mini App', 'Automation', 'Landing'],
+  },
+];
+
+export const niches = [
+  { ru: 'HoReCa', en: 'HoReCa' },
+  { ru: 'Медицина', en: 'Healthcare' },
+  { ru: 'E-commerce', en: 'E-commerce' },
+  { ru: 'Логистика', en: 'Logistics' },
+  { ru: 'Бьюти', en: 'Beauty' },
+  { ru: 'Производство', en: 'Manufacturing' },
+  { ru: 'Образование', en: 'Education' },
+  { ru: 'Авто', en: 'Auto' },
+];
+
+export const whyUsCards = [
+  { title: 'От идеи до прибыли', titleEn: 'From idea to profit', description: 'Не нужно нанимать 5 подрядчиков. Один партнёр — сайт, боты, автоматизация, аналитика, креатив.', descriptionEn: 'No need to hire 5 contractors. One partner — website, bots, automation, analytics, creative.', size: 'large' as const },
+  { title: 'Современный стек', titleEn: 'Modern tech stack', description: 'Next.js, React, n8n, OpenAI, Claude, Python, Telegram API — используем лучшие инструменты.', descriptionEn: 'Next.js, React, n8n, OpenAI, Claude, Python, Telegram API — we use the best tools.', size: 'small' as const },
+  { title: 'MVP за 3-5 дней', titleEn: 'MVP in 3-5 days', description: 'Быстрый запуск — вы видите результат сразу, а не через месяцы ожидания.', descriptionEn: 'Fast launch — you see results immediately, not after months of waiting.', size: 'small' as const },
+  { title: 'Реальные кейсы', titleEn: 'Real case studies', description: 'Салоны, клиники, e-commerce, логистика, HoReCa — понимаем специфику разных ниш.', descriptionEn: 'Salons, clinics, e-commerce, logistics, HoReCa — we understand different niches.', size: 'small' as const },
+  { title: 'Не бросаем после запуска', titleEn: "We don't abandon after launch", description: 'Мониторим, оптимизируем, развиваем. Ваше решение растёт вместе с бизнесом.', descriptionEn: 'We monitor, optimize, develop. Your solution grows with your business.', size: 'small' as const },
+  { title: 'Глубокая AI-экспертиза', titleEn: 'Deep AI expertise', description: 'Не просто ставим чат-бота — строим AI-системы с RAG, аналитикой тональности, автоматизацией.', descriptionEn: 'Not just setting up a chatbot — building AI systems with RAG, sentiment analysis, automation.', size: 'large' as const },
+];
+
+export const faqItems = [
+  { question: 'Сколько стоят ваши услуги?', questionEn: 'How much do your services cost?', answer: 'Лендинг — от 30 000 ₽, AI-бот — от 40 000 ₽, автоматизация — от 25 000 ₽. Финальная цена зависит от сложности. Мы всегда называем вилку ДО начала работы и фиксируем стоимость в договоре.', answerEn: 'Landing page — from $400, AI bot — from $550, automation — from $350. Final price depends on complexity. We always quote a range BEFORE starting and fix the price in the contract.' },
+  { question: 'Какие сроки?', questionEn: 'What are the timelines?', answer: 'MVP (лендинг или бот) — 3-7 дней. Комплексный проект (сайт + бот + автоматизация) — 2-4 недели. Мы не растягиваем сроки — работаем спринтами с еженедельными демо.', answerEn: 'MVP (landing or bot) — 3-7 days. Complex project (site + bot + automation) — 2-4 weeks. We work in sprints with weekly demos.' },
+  { question: 'Что если результат не понравится?', questionEn: "What if I don't like the result?", answer: 'Мы показываем прототип и дизайн ДО начала разработки. Если на этом этапе что-то не устраивает — правим бесплатно. После запуска даём гарантийный период на исправление багов.', answerEn: 'We show prototype and design BEFORE development. If something is off at this stage — we fix it free. After launch, we provide a warranty period for bug fixes.' },
+  { question: 'Работаете по договору?', questionEn: 'Do you work with contracts?', answer: 'Да. Договор, ТЗ, поэтапная оплата. Всё прозрачно и официально.', answerEn: 'Yes. Contract, technical specification, milestone-based payments. Everything transparent and official.' },
+  { question: 'Можно ли доработать проект после запуска?', questionEn: 'Can the project be improved after launch?', answer: 'Да. У нас есть пакеты поддержки, а также разовые доработки. Система спроектирована так, чтобы легко масштабироваться.', answerEn: 'Yes. We offer support packages and one-time improvements. The system is designed to scale easily.' },
+  { question: 'Работаете с регионами или только Москва?', questionEn: 'Do you work with regions or only Moscow?', answer: 'Работаем удалённо по всей России и СНГ. Коммуникация через Telegram, Zoom, Google Meet — как удобнее.', answerEn: 'We work remotely across Russia and CIS. Communication via Telegram, Zoom, Google Meet — whatever works best.' },
+];
+
+export const techLogos = {
+  row1: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Python', 'PostgreSQL'],
+  row2: ['n8n', 'Claude AI', 'Vercel AI SDK', 'Telegram API', 'Vercel', 'Supabase', 'Figma'],
+};
+
+export const navLinks = [
+  { href: '#services', label: 'Услуги', labelEn: 'Services' },
+  { href: '#showcase', label: 'Портфолио', labelEn: 'Portfolio' },
+  { href: '#cases', label: 'Кейсы', labelEn: 'Cases' },
+  { href: '#faq', label: 'FAQ', labelEn: 'FAQ' },
+  { href: '#contact', label: 'Контакты', labelEn: 'Contacts' },
+];
