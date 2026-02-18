@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { projects } from '@/lib/data';
 import { staggerContainer, fadeUp, cardReveal } from '@/lib/animations';
 import { useLanguage } from '@/lib/language';
@@ -21,7 +20,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
       viewport={{ once: true, margin: '-50px' }}
       transition={{ delay: index * 0.05 }}
       whileHover={{ scale: 1.02 }}
-      className="relative flex-shrink-0 w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden group"
+      className="relative flex-shrink-0 w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden group snap-start"
     >
       {/* Live iframe preview */}
       {!isExternal && (
@@ -74,9 +73,6 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
 
 export default function ShowcaseReel() {
   const { lang } = useLanguage();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const springX = useSpring(x, { damping: 30, stiffness: 200 });
 
   return (
     <section id="showcase" className="py-24 md:py-32 overflow-hidden">
@@ -95,23 +91,19 @@ export default function ShowcaseReel() {
             {lang === 'ru' ? (<>Наши работы говорят<br className="hidden md:block" />громче слов</>) : (<>Our work speaks<br className="hidden md:block" />louder than words</>)}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-base md:text-lg max-w-xl">
-            {lang === 'ru' ? 'Каждый проект — это решение конкретной бизнес-задачи. Перетяните, чтобы листать.' : 'Every project solves a real business challenge. Drag to scroll.'}
+            {lang === 'ru' ? 'Каждый проект — это решение конкретной бизнес-задачи. Листайте, чтобы посмотреть.' : 'Every project solves a real business challenge. Swipe to browse.'}
           </motion.p>
         </motion.div>
       </div>
 
-      <motion.div
-        ref={containerRef}
-        className="flex gap-4 md:gap-6 overflow-x-scroll scrollbar-hide cursor-grab active:cursor-grabbing px-5 md:px-[calc((100vw-1280px)/2+24px)] pb-4"
-        drag="x"
-        dragConstraints={containerRef}
-        style={{ x: springX }}
-        onDrag={(_, info) => x.set(x.get() + info.delta.x)}
+      <div
+        className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide px-5 md:px-[calc((100vw-1280px)/2+24px)] pb-4 snap-x snap-mandatory scroll-smooth"
+        style={{ WebkitOverflowScrolling: 'touch' }}
       >
         {projects.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
-      </motion.div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 mt-10">
         <motion.a
