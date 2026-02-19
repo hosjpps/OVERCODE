@@ -20,7 +20,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
       viewport={{ once: true, margin: '-50px' }}
       transition={{ delay: index * 0.05 }}
       whileHover={{ scale: 1.02 }}
-      className="relative flex-shrink-0 w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden group snap-start"
+      className="relative w-full h-[200px] md:h-[280px] rounded-2xl overflow-hidden group"
     >
       {/* Live iframe preview — desktop only */}
       {!isExternal && (
@@ -86,19 +86,16 @@ export default function ShowcaseReel() {
             {'// portfolio'}
           </motion.span>
           <motion.h2 variants={fadeUp} className="font-display font-bold text-3xl md:text-5xl text-text-primary mb-4">
-            {lang === 'ru' ? (<>Наши работы говорят<br className="hidden md:block" />громче слов</>) : (<>Our work speaks<br className="hidden md:block" />louder than words</>)}
+            {lang === 'ru' ? (<>Наши работы говорят{' '}<br className="hidden md:block" />громче слов</>) : (<>Our work speaks{' '}<br className="hidden md:block" />louder than words</>)}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-base md:text-lg max-w-xl">
-            {lang === 'ru' ? 'Каждый проект — это решение конкретной бизнес-задачи. Листайте, чтобы посмотреть.' : 'Every project solves a real business challenge. Swipe to browse.'}
+            {lang === 'ru' ? 'Каждый проект — это решение конкретной бизнес-задачи.' : 'Every project solves a real business challenge.'}
           </motion.p>
         </motion.div>
       </div>
 
-      <div
-        className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide px-5 md:px-[calc((100vw-1280px)/2+24px)] pb-4 snap-x snap-mandatory scroll-smooth"
-        style={{ WebkitOverflowScrolling: 'touch' }}
-      >
-        {projects.map((project, i) => (
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        {projects.slice(0, 3).map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
       </div>
@@ -111,7 +108,7 @@ export default function ShowcaseReel() {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 text-accent-purple hover:text-accent-pink transition-colors font-medium"
         >
-          {lang === 'ru' ? 'Все работы' : 'All works'}
+          {lang === 'ru' ? 'Смотреть все проекты' : 'View all projects'}
           <span className="text-lg">&rarr;</span>
         </motion.a>
       </div>
