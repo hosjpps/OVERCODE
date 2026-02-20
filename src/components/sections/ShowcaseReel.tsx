@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { projects } from '@/lib/data';
 import { staggerContainer, fadeUp, cardReveal } from '@/lib/animations';
@@ -42,13 +43,25 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
         </div>
       )}
 
-      {/* Gradient card — mobile fallback + Telegram links */}
-      <div
-        className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}
-        style={{
-          background: 'linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(236,72,153,0.12) 50%, rgba(6,182,212,0.1) 100%)',
-        }}
-      />
+      {/* Screenshot fallback — mobile + Telegram links */}
+      {'screenshot' in project && project.screenshot ? (
+        <div className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}>
+          <Image
+            src={project.screenshot}
+            alt={project.name}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+      ) : (
+        <div
+          className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}
+          style={{
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(236,72,153,0.12) 50%, rgba(6,182,212,0.1) 100%)',
+          }}
+        />
+      )}
 
       {/* Gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/20 to-transparent z-10" />

@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="flex items-center gap-2">
             <span className="font-display font-bold text-lg text-text-primary tracking-widest uppercase">OVERCODE</span>
-            <span className="text-text-tertiary text-sm">© 2025</span>
+            <span className="text-text-tertiary text-sm">© 2026</span>
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">

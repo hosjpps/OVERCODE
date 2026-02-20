@@ -14,8 +14,8 @@ interface ChatWidgetProps {
 }
 
 const greetings = {
-  ru: 'Привет! Я AI-ассистент OVERCODE. Могу рассказать об услугах, ценах, сроках или помочь подобрать решение. Спрашивайте!',
-  en: 'Hi! I am OVERCODE AI assistant. I can tell you about our services, pricing, timelines, or help you find the right solution. Ask away!',
+  ru: 'Привет! Я Макс из OVERCODE. Помогу подобрать решение для вашего бизнеса — сайт, AI-бот, автоматизация или всё вместе. Расскажите, что вас привело?',
+  en: "Hi! I'm Max from OVERCODE. I'll help you find the right digital solution — website, AI bot, automation, or the full package. What brings you here today?",
 };
 
 export default function ChatWidget({ onClose, showHeader = true, className = '' }: ChatWidgetProps) {

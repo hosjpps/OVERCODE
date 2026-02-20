@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { projects } from '@/lib/data';
@@ -129,6 +130,24 @@ export default function PortfolioPage() {
                         sandbox="allow-same-origin allow-scripts"
                         tabIndex={-1}
                       />
+                    )}
+                    {/* Screenshot — mobile */}
+                    {'screenshot' in project && project.screenshot ? (
+                      <div className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}>
+                        <Image
+                          src={project.screenshot}
+                          alt={project.name}
+                          fill
+                          className="object-cover object-top"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      </div>
+                    ) : isExternal && (
+                      <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(236,72,153,0.1) 50%, rgba(6,182,212,0.08) 100%)' }}>
+                        <span className="text-4xl opacity-30">
+                          {project.category === 'AI-бот' ? '🤖' : '📱'}
+                        </span>
+                      </div>
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/30 to-transparent z-10" />
                     <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between z-20">

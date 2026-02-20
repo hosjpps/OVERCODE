@@ -211,11 +211,11 @@ export default function Process() {
                       className="relative"
                     >
                       {/* Card */}
-                      <div className="glass rounded-2xl p-6 transition-all duration-300 group-hover:border-accent-purple/30 group-hover:shadow-[0_0_40px_rgba(124,58,237,0.12)] relative overflow-hidden h-full">
+                      <div className="glass rounded-2xl p-6 transition-all duration-300 group-hover:border-accent-purple/30 group-hover:shadow-[0_0_40px_rgba(124,58,237,0.12)] relative overflow-hidden min-h-[220px] flex flex-col">
                         {/* Hover gradient */}
                         <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/[0.06] via-transparent to-accent-cyan/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                        <div className="relative z-10">
+                        <div className="relative z-10 flex-1">
                           {/* Top row: icon + number */}
                           <div className="flex items-center justify-between mb-5">
                             <div className="w-[44px] h-[44px] rounded-xl bg-accent-purple/[0.08] border border-accent-purple/20 flex items-center justify-center group-hover:bg-accent-purple/[0.15] group-hover:border-accent-purple/30 transition-all duration-300">
