@@ -1,7 +1,7 @@
 export const projects = [
   { id: 1, name: 'Surikov Marketing', category: 'Лендинг', categoryEn: 'Landing', url: 'https://surikov-marketing.ru', description: 'Маркетинговое агентство', descriptionEn: 'Marketing agency' },
   { id: 2, name: 'Barbershop', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-barbershop-landing-page-opal.vercel.app', description: 'Барбершоп', descriptionEn: 'Barbershop' },
-  { id: 3, name: 'Pho Bo Franchise', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-pho-bo-franshise-redesign-2.vercel.app', description: 'Франшиза кафе', descriptionEn: 'Cafe franchise' },
+  { id: 3, name: 'Pho Bo Franchise', category: 'Лендинг', categoryEn: 'Landing', url: 'https://pho-bo-franshise.vercel.app', description: 'Франшиза кафе', descriptionEn: 'Cafe franchise' },
   { id: 4, name: 'Pho Bo Cafe', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-phobo-cafe-redesign.vercel.app', description: 'Вьетнамское кафе', descriptionEn: 'Vietnamese cafe' },
   { id: 5, name: 'MedLife Clinic', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-med-life-clinic-website.vercel.app', description: 'Медицинская клиника', descriptionEn: 'Medical clinic' },
   { id: 6, name: 'La Dolce Vita', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-la-dolce-vita-landing-page.vercel.app', description: 'Ресторан', descriptionEn: 'Restaurant' },
