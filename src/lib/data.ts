@@ -1,6 +1,6 @@
 export const projects = [
   { id: 1, name: 'Surikov Marketing', category: 'Лендинг', categoryEn: 'Landing', url: 'https://surikov-marketing.ru', description: 'Маркетинговое агентство', descriptionEn: 'Marketing agency', screenshot: '/screenshots/surikov-marketing.webp' },
-  { id: 2, name: 'Dr. Yuri Meksha', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-medical-website-builder-five.vercel.app', description: 'Сайт врача-гинеколога', descriptionEn: 'Gynecologist website', screenshot: '/screenshots/medical-platform.webp' },
+  { id: 2, name: 'Dr. Yuri Meksha', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://meksha.ru', description: 'Сайт врача-гинеколога', descriptionEn: 'Gynecologist website', screenshot: '/screenshots/medical-platform.webp' },
   { id: 3, name: 'Orlov Logistics', category: 'Лендинг', categoryEn: 'Landing', url: 'https://orlovlogistics.ru', description: 'Логистическая компания', descriptionEn: 'Logistics company', screenshot: '/screenshots/orlov-logistics.webp' },
   { id: 4, name: 'Barbershop', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-barbershop-landing-page-opal.vercel.app', description: 'Барбершоп', descriptionEn: 'Barbershop', screenshot: '/screenshots/barbershop.webp' },
   { id: 5, name: 'Pho Bo Franchise', category: 'Лендинг', categoryEn: 'Landing', url: 'https://pho-bo-franshise.vercel.app', description: 'Франшиза кафе', descriptionEn: 'Cafe franchise', screenshot: '/screenshots/pho-bo-franchise.webp' },
