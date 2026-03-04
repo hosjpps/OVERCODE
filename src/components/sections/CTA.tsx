@@ -46,10 +46,10 @@ export default function CTA() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch lg:[grid-auto-rows:520px]">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch lg:[grid-auto-rows:620px]">
           {/* AI Chat */}
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="glass rounded-2xl overflow-hidden h-[400px] lg:h-auto">
+            className="glass rounded-2xl overflow-hidden h-[480px] lg:h-auto">
             <ChatWidget showHeader={true} className="h-full" />
           </motion.div>
 

@@ -26,6 +26,8 @@ export default function PortfolioPage() {
     ];
   }, []);
 
+  const liveProjects = useMemo(() => projects.filter((p) => 'live' in p && p.live), []);
+
   const filtered = useMemo(
     () => (active === 'all' ? projects : projects.filter((p) => p.category === active)),
     [active]
@@ -92,6 +94,71 @@ export default function PortfolioPage() {
         </motion.div>
       </div>
 
+      {/* Live Projects */}
+      {active === 'all' && (
+        <div className="max-w-[1280px] mx-auto px-5 md:px-10 lg:px-16 pb-12">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <h2 className="font-display font-bold text-xl md:text-2xl text-text-primary">
+                {lang === 'ru' ? 'Реальные проекты' : 'Live Projects'}
+              </h2>
+              <span className="text-text-tertiary text-sm font-mono">{liveProjects.length}</span>
+            </motion.div>
+            <motion.p variants={fadeUp} className="text-text-secondary text-sm mb-8">
+              {lang === 'ru'
+                ? 'Проекты, работающие на реальных доменах клиентов прямо сейчас'
+                : 'Projects running on real client domains right now'}
+            </motion.p>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {liveProjects.map((project) => (
+              <motion.a
+                key={`live-${project.id}`}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={cardReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                whileHover={{ y: -6 }}
+                className="group glass rounded-2xl overflow-hidden block transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] hover:border-green-500/30 relative"
+              >
+                <div className="absolute top-3 right-3 z-30 flex items-center gap-1.5 bg-green-500/20 border border-green-500/30 rounded-full px-2.5 py-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-green-400 text-[10px] font-mono uppercase">Live</span>
+                </div>
+                <div className="relative h-[220px] bg-gradient-to-br from-accent-purple/10 to-accent-pink/5 overflow-hidden">
+                  {'screenshot' in project && project.screenshot && (
+                    <div className="absolute inset-0">
+                      <Image src={project.screenshot} alt={project.name} fill className="object-cover object-top" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/30 to-transparent z-10" />
+                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between z-20">
+                    <div>
+                      <h3 className="font-bold text-lg text-text-primary">{project.name}</h3>
+                      <p className="text-text-secondary text-sm">{t(project, 'description')}</p>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-text-tertiary group-hover:text-green-400 transition-colors flex-shrink-0" />
+                  </div>
+                </div>
+                <div className="px-4 py-3 border-t border-white/[0.06] flex items-center justify-between">
+                  <span className="font-mono text-xs px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400">
+                    {new URL(project.url).hostname}
+                  </span>
+                  <span className="font-mono text-xs px-3 py-1 rounded-full bg-accent-purple/10 border border-accent-purple/20 text-accent-purple">
+                    {t(project, 'category')}
+                  </span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+          <div className="mt-10 border-b border-white/[0.06]" />
+        </div>
+      )}
+
       {/* Grid */}
       <div className="max-w-[1280px] mx-auto px-5 md:px-10 lg:px-16 pb-20">
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -112,28 +179,9 @@ export default function PortfolioPage() {
                   whileHover={{ y: -6 }}
                   className="group glass rounded-2xl overflow-hidden block transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)] hover:border-accent-purple/30"
                 >
-                  {/* Live preview */}
                   <div className="relative h-[220px] bg-gradient-to-br from-accent-purple/10 to-accent-pink/5 overflow-hidden">
-                    {/* iframe — desktop only */}
-                    {!isExternal && (
-                      <iframe
-                        src={project.url}
-                        title={project.name}
-                        className="pointer-events-none origin-top-left hidden md:block"
-                        style={{
-                          width: '1280px',
-                          height: '900px',
-                          transform: 'scale(0.32)',
-                          transformOrigin: 'top left',
-                        }}
-                        loading="lazy"
-                        sandbox="allow-same-origin allow-scripts"
-                        tabIndex={-1}
-                      />
-                    )}
-                    {/* Screenshot — mobile */}
                     {'screenshot' in project && project.screenshot ? (
-                      <div className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}>
+                      <div className="absolute inset-0">
                         <Image
                           src={project.screenshot}
                           alt={project.name}

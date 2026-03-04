@@ -23,29 +23,9 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
       whileHover={{ scale: 1.02 }}
       className="relative w-full h-[200px] md:h-[280px] rounded-2xl overflow-hidden group"
     >
-      {/* Live iframe preview — desktop only */}
-      {!isExternal && (
-        <div className="absolute inset-0 overflow-hidden hidden md:block">
-          <iframe
-            src={project.url}
-            title={project.name}
-            className="pointer-events-none origin-top-left"
-            style={{
-              width: '1280px',
-              height: '900px',
-              transform: 'scale(0.3125)',
-              transformOrigin: 'top left',
-            }}
-            loading="lazy"
-            sandbox="allow-same-origin allow-scripts"
-            tabIndex={-1}
-          />
-        </div>
-      )}
-
-      {/* Screenshot fallback — mobile + Telegram links */}
+      {/* Screenshot */}
       {'screenshot' in project && project.screenshot ? (
-        <div className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}>
+        <div className="absolute inset-0">
           <Image
             src={project.screenshot}
             alt={project.name}
@@ -56,7 +36,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
         </div>
       ) : (
         <div
-          className={`absolute inset-0 ${!isExternal ? 'md:hidden' : ''}`}
+          className="absolute inset-0"
           style={{
             background: 'linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(236,72,153,0.12) 50%, rgba(6,182,212,0.1) 100%)',
           }}
