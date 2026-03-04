@@ -1,13 +1,13 @@
 export const projects = [
-  { id: 1, name: 'Surikov Marketing', category: 'Лендинг', categoryEn: 'Landing', url: 'https://surikov-marketing.ru', description: 'Маркетинговое агентство', descriptionEn: 'Marketing agency', screenshot: '/screenshots/surikov-marketing.webp' },
+  { id: 1, name: 'Brewery', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://lytkarin-brewery.vercel.app', description: 'Пивоварня', descriptionEn: 'Brewery', screenshot: '/screenshots/brewery.webp' },
   { id: 2, name: 'Dr. Yuri Meksha', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://meksha.ru', description: 'Сайт врача-гинеколога', descriptionEn: 'Gynecologist website', screenshot: '/screenshots/medical-platform.webp' },
-  { id: 3, name: 'Orlov Logistics', category: 'Лендинг', categoryEn: 'Landing', url: 'https://orlovlogistics.ru', description: 'Логистическая компания', descriptionEn: 'Logistics company', screenshot: '/screenshots/orlov-logistics.webp' },
+  { id: 3, name: 'Pho Bo Franchise', category: 'Лендинг', categoryEn: 'Landing', url: 'http://franchise.phobo.cafe', description: 'Франшиза кафе', descriptionEn: 'Cafe franchise', screenshot: '/screenshots/pho-bo-franchise.webp' },
   { id: 4, name: 'Barbershop', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-barbershop-landing-page-opal.vercel.app', description: 'Барбершоп', descriptionEn: 'Barbershop', screenshot: '/screenshots/barbershop.webp' },
-  { id: 5, name: 'Pho Bo Franchise', category: 'Лендинг', categoryEn: 'Landing', url: 'https://pho-bo-franshise.vercel.app', description: 'Франшиза кафе', descriptionEn: 'Cafe franchise', screenshot: '/screenshots/pho-bo-franchise.webp' },
+  { id: 5, name: 'Orlov Logistics', category: 'Лендинг', categoryEn: 'Landing', url: 'https://orlovlogistics.ru', description: 'Логистическая компания', descriptionEn: 'Logistics company', screenshot: '/screenshots/orlov-logistics.webp' },
   { id: 6, name: 'Pho Bo Cafe', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-phobo-cafe-redesign.vercel.app', description: 'Вьетнамское кафе', descriptionEn: 'Vietnamese cafe', screenshot: '/screenshots/pho-bo-cafe.webp' },
   { id: 7, name: 'MedLife Clinic', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-med-life-clinic-website.vercel.app', description: 'Медицинская клиника', descriptionEn: 'Medical clinic', screenshot: '/screenshots/medlife-clinic.webp' },
   { id: 8, name: 'La Dolce Vita', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-la-dolce-vita-landing-page.vercel.app', description: 'Ресторан', descriptionEn: 'Restaurant', screenshot: '/screenshots/la-dolce-vita.webp' },
-  { id: 9, name: 'Brewery', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-brewery-landing-page.vercel.app', description: 'Пивоварня', descriptionEn: 'Brewery', screenshot: '/screenshots/brewery.webp' },
+  { id: 9, name: 'Surikov Marketing', category: 'Лендинг', categoryEn: 'Landing', url: 'https://surikov-marketing.ru', description: 'Маркетинговое агентство', descriptionEn: 'Marketing agency', screenshot: '/screenshots/surikov-marketing.webp' },
   { id: 10, name: 'Architect Portfolio', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-architect-portfolio-website-six.vercel.app', description: 'Архитектурное бюро', descriptionEn: 'Architecture firm', screenshot: '/screenshots/architect-portfolio.webp' },
   { id: 11, name: 'Corporate Site', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://v0-corporate-website-build-pied.vercel.app', description: 'Корпоративный сайт', descriptionEn: 'Corporate website', screenshot: '/screenshots/corporate-site.webp' },
   { id: 12, name: 'E-commerce Store', category: 'Интернет-магазин', categoryEn: 'E-commerce', url: 'https://store-l3hb.vercel.app', description: 'Онлайн-магазин', descriptionEn: 'Online store', screenshot: '/screenshots/ecommerce-store.webp' },
@@ -17,6 +17,7 @@ export const projects = [
   { id: 16, name: 'AI Mastery Academy', category: 'Веб-приложение', categoryEn: 'Web App', url: 'https://ai-mastery-academy-five.vercel.app', description: 'Образовательная платформа', descriptionEn: 'Education platform', screenshot: '/screenshots/ai-mastery-academy.webp' },
   { id: 17, name: 'Pho Bo Mini App', category: 'Telegram Mini App', categoryEn: 'Telegram Mini App', url: 'https://t.me/Pho_bo_cafe_bot', description: 'Кафе в Telegram', descriptionEn: 'Cafe in Telegram' },
   { id: 18, name: 'CaloriAI', category: 'AI-бот', categoryEn: 'AI Bot', url: 'https://t.me/CaloriAI1_bot', description: 'Подсчёт калорий через AI', descriptionEn: 'AI calorie tracking' },
+  { id: 19, name: 'Floristika', category: 'Лендинг', categoryEn: 'Landing', url: 'https://floristika-1.vercel.app', description: 'Цветочный магазин', descriptionEn: 'Flower shop', screenshot: '/screenshots/floristika.webp' },
 ];
 
 export const services = [
