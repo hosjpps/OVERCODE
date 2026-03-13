@@ -19,10 +19,10 @@ export default function Services() {
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-100px' }} className="mb-16">
           <motion.span variants={fadeUp} className="font-mono text-accent-purple text-sm tracking-wider block mb-4">{'// services'}</motion.span>
           <motion.h2 variants={fadeUp} className="font-display font-bold text-3xl md:text-5xl text-text-primary mb-4">
-            {lang === 'ru' ? 'Полный цикл digital-решений' : 'Full-cycle digital solutions'}
+            {lang === 'ru' ? 'Что мы делаем и сколько это стоит' : 'What we do and what it costs'}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-base md:text-lg max-w-xl">
-            {lang === 'ru' ? 'От идеи до прибыли. Один партнер — сайт, боты, автоматизация, аналитика и креатив.' : 'From idea to profit. One partner — website, bots, automation, analytics and creative.'}
+            {lang === 'ru' ? 'Каждое направление работает отдельно. Вместе — дают x10 к эффективности.' : 'Each service works on its own. Together — they multiply your results.'}
           </motion.p>
         </motion.div>
 

@@ -1,5 +1,5 @@
 export const projects = [
-  { id: 1, name: 'Brewery', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://lytkarin-brewery.vercel.app', description: 'Пивоварня', descriptionEn: 'Brewery', screenshot: '/screenshots/brewery.webp', live: true },
+  { id: 1, name: 'Brewery', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://lytkarin.ru', description: 'Пивоварня', descriptionEn: 'Brewery', screenshot: '/screenshots/brewery.webp', live: true },
   { id: 2, name: 'Dr. Yuri Meksha', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://meksha.ru', description: 'Сайт врача-гинеколога', descriptionEn: 'Gynecologist website', screenshot: '/screenshots/medical-platform.webp', live: true },
   { id: 3, name: 'Pho Bo Franchise', category: 'Лендинг', categoryEn: 'Landing', url: 'http://franchise.phobo.cafe', description: 'Франшиза кафе', descriptionEn: 'Cafe franchise', screenshot: '/screenshots/pho-bo-franchise.webp', live: true },
   { id: 4, name: 'Barbershop', category: 'Лендинг', categoryEn: 'Landing', url: 'https://v0-barbershop-landing-page-opal.vercel.app', description: 'Барбершоп', descriptionEn: 'Barbershop', screenshot: '/screenshots/barbershop.webp' },
@@ -104,18 +104,18 @@ export const services = [
 ];
 
 export const counters = [
-  { value: 20, suffix: '+', label: 'проектов в портфолио', labelEn: 'projects in portfolio' },
-  { value: 3, suffix: ' дня', suffixEn: ' days', label: 'среднее время MVP', labelEn: 'average MVP delivery' },
-  { value: 24, suffix: '/7', label: 'работают наши AI-боты', labelEn: 'our AI bots work' },
-  { value: 500, suffix: '+', label: 'интеграций доступно', labelEn: 'integrations available' },
+  { value: 20, suffix: '+', label: 'реализованных проектов', labelEn: 'projects delivered' },
+  { value: 3, suffix: ' дня', suffixEn: ' days', label: 'от брифа до рабочего MVP', labelEn: 'from brief to working MVP' },
+  { value: 5, suffix: '', label: 'проектов на боевых доменах', labelEn: 'projects live on real domains' },
+  { value: 1, suffix: ' час', suffixEn: ' hour', label: 'среднее время ответа', labelEn: 'average response time' },
 ];
 
 export const packages = [
   {
     id: 1, name: 'Быстрый старт', nameEn: 'Quick Start',
     price: 'от 30 000 ₽', priceEn: 'from $400',
-    idealFor: 'Малый бизнес, старт продаж, тестирование гипотезы',
-    idealForEn: 'Small business, sales launch, hypothesis testing',
+    idealFor: 'Малый бизнес, запуск продаж, первый сайт',
+    idealForEn: 'Small business, sales launch, first website',
     features: ['Лендинг с высокой конверсией', 'Мобильная адаптация', 'Базовая SEO-оптимизация', 'Подключение аналитики', 'Форма заявки / связь с Telegram', 'Фикс критических багов — 1 месяц'],
     featuresEn: ['High-conversion landing page', 'Mobile responsive', 'Basic SEO optimization', 'Analytics integration', 'Contact form / Telegram integration', 'Critical bug fixes — 1 month'],
     timeline: '3-7 дней', timelineEn: '3-7 days', popular: false,
@@ -181,16 +181,16 @@ export const niches = [
 ];
 
 export const whyUsCards = [
-  { title: 'От идеи до прибыли', titleEn: 'From idea to profit', description: 'Не нужно нанимать 5 подрядчиков. Один партнёр — сайт, боты, автоматизация, аналитика, креатив.', descriptionEn: 'No need to hire 5 contractors. One partner — website, bots, automation, analytics, creative.', size: 'large' as const },
+  { title: 'Один подрядчик на всё', titleEn: 'One partner for everything', description: 'Не нужно нанимать 5 подрядчиков. Сайт, боты, автоматизация, аналитика, креатив — один счёт, один чат, один ответственный.', descriptionEn: 'No need to hire 5 contractors. Website, bots, automation, analytics, creative — one invoice, one chat, one point of contact.', size: 'large' as const },
   { title: 'Современный стек', titleEn: 'Modern tech stack', description: 'Next.js, React, n8n, OpenAI, Claude, Python, Telegram API — используем лучшие инструменты.', descriptionEn: 'Next.js, React, n8n, OpenAI, Claude, Python, Telegram API — we use the best tools.', size: 'small' as const },
-  { title: 'MVP за 3-5 дней', titleEn: 'MVP in 3-5 days', description: 'Быстрый запуск — вы видите результат сразу, а не через месяцы ожидания.', descriptionEn: 'Fast launch — you see results immediately, not after months of waiting.', size: 'small' as const },
-  { title: 'Реальные кейсы', titleEn: 'Real case studies', description: 'Салоны, клиники, e-commerce, логистика, HoReCa — понимаем специфику разных ниш.', descriptionEn: 'Salons, clinics, e-commerce, logistics, HoReCa — we understand different niches.', size: 'small' as const },
+  { title: 'MVP за 3-5 дней', titleEn: 'MVP in 3-5 days', description: 'Работающий продукт через неделю. Не макет — реальный сайт на реальном домене.', descriptionEn: 'A working product in a week. Not a mockup — a real site on a real domain.', size: 'small' as const },
+  { title: 'Понимаем ниши', titleEn: 'We know your niche', description: 'Салоны, клиники, e-commerce, логистика, HoReCa — работали с каждой из этих сфер.', descriptionEn: 'Salons, clinics, e-commerce, logistics, HoReCa — we\'ve worked in each of these industries.', size: 'small' as const },
   { title: 'Не бросаем после запуска', titleEn: "We don't abandon after launch", description: 'Мониторим, оптимизируем, развиваем. Ваше решение растёт вместе с бизнесом.', descriptionEn: 'We monitor, optimize, develop. Your solution grows with your business.', size: 'small' as const },
   { title: 'Глубокая AI-экспертиза', titleEn: 'Deep AI expertise', description: 'Не просто ставим чат-бота — строим AI-системы с RAG, аналитикой тональности, автоматизацией.', descriptionEn: 'Not just setting up a chatbot — building AI systems with RAG, sentiment analysis, automation.', size: 'large' as const },
 ];
 
 export const faqItems = [
-  { question: 'Сколько стоят ваши услуги?', questionEn: 'How much do your services cost?', answer: 'Лендинг — от 30 000 ₽, AI-бот — от 40 000 ₽, автоматизация — от 25 000 ₽. Финальная цена зависит от сложности. Мы всегда называем стоимость ДО начала работы и фиксируем её в договоре.', answerEn: 'Landing page — from $400, AI bot — from $550, automation — from $350. Final price depends on complexity. We always quote the price BEFORE starting and fix it in the contract.' },
+  { question: 'Сколько стоят ваши услуги?', questionEn: 'How much do your services cost?', answer: 'Лендинг — от 30 000 ₽, AI-бот — от 30 000 ₽, автоматизация — от 25 000 ₽. Финальная цена зависит от сложности. Мы всегда называем стоимость ДО начала работы и фиксируем её в договоре.', answerEn: 'Landing page — from $400, AI bot — from $400, automation — from $350. Final price depends on complexity. We always quote the price BEFORE starting and fix it in the contract.' },
   { question: 'Какие сроки?', questionEn: 'What are the timelines?', answer: 'MVP (лендинг или бот) — 3-7 дней. Комплексный проект (сайт + бот + автоматизация) — 1-4 недели. Мы не растягиваем сроки — работаем спринтами с еженедельными демо.', answerEn: 'MVP (landing or bot) — 3-7 days. Complex project (site + bot + automation) — 1-4 weeks. We work in sprints with weekly demos.' },
   { question: 'Что если результат не понравится?', questionEn: "What if I don't like the result?", answer: 'Мы показываем прототип и дизайн ДО начала разработки. Если на этом этапе что-то не устраивает — правим бесплатно. После запуска даём гарантийный период на исправление багов.', answerEn: 'We show prototype and design BEFORE development. If something is off at this stage — we fix it free. After launch, we provide a warranty period for bug fixes.' },
   { question: 'Работаете по договору?', questionEn: 'Do you work with contracts?', answer: 'Да. Договор, ТЗ, поэтапная оплата. Всё прозрачно и официально.', answerEn: 'Yes. Contract, technical specification, milestone-based payments. Everything transparent and official.' },

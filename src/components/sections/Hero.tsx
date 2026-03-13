@@ -23,12 +23,12 @@ export default function Hero() {
       <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="relative z-20 max-w-5xl mx-auto px-6 text-center pt-32 pb-24">
         <motion.span variants={fadeUp} className="inline-block font-mono text-accent-purple text-sm mb-6 tracking-wider">{'// digital agency'}</motion.span>
         <motion.h1 variants={fadeUp} className="font-display font-bold text-[40px] md:text-[64px] lg:text-[80px] leading-[1.05] text-text-primary mb-6">
-          {lang === 'ru' ? (<>Мы пишем код.<br />Вы считаете прибыль.</>) : (<>We write code.<br />You count profit.</>)}
+          {lang === 'ru' ? (<>Запускаем digital-системы,<br />которые продают за вас</>) : (<>We build digital systems<br />that sell for you</>)}
         </motion.h1>
         <motion.p variants={fadeUp} className="text-text-secondary text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
           {lang === 'ru'
-            ? 'Сайты, AI-боты, автоматизация, аналитика и креатив — всё, что нужно вашему бизнесу для роста в одном месте.'
-            : 'Websites, AI bots, automation, analytics and creative — everything your business needs to grow, in one place.'}
+            ? 'Один подрядчик — от лендинга до AI-автоматизации. Первый результат через 3 дня.'
+            : 'One partner — from landing pages to AI automation. First results in 3 days.'}
         </motion.p>
         <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#contact" className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-medium text-white text-base transition-all duration-300 animate-pulse-glow" style={{ background: 'linear-gradient(135deg, #7C3AED, #EC4899)' }}>

@@ -37,12 +37,12 @@ export default function CTA() {
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="text-center mb-16">
           <motion.p variants={fadeUp} className="font-mono text-sm text-accent-purple mb-4">{"// let's talk"}</motion.p>
           <motion.h2 variants={fadeUp} className="font-display font-bold text-3xl md:text-4xl lg:text-[56px] lg:leading-[1.1] text-text-primary mb-4">
-            {lang === 'ru' ? 'Готовы начать?' : 'Ready to start?'}
+            {lang === 'ru' ? 'Расскажите о задаче — ответим за час' : 'Tell us about your project — we reply in an hour'}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-lg md:text-xl max-w-[600px] mx-auto">
             {lang === 'ru'
-              ? 'Задайте вопрос нашему AI-ассистенту прямо сейчас или свяжитесь напрямую. Первая консультация — бесплатно.'
-              : 'Ask our AI assistant a question right now or contact us directly. First consultation is free.'}
+              ? 'Спросите AI-ассистента, оставьте заявку или напишите в Telegram. Первая консультация — бесплатно.'
+              : 'Ask our AI assistant, leave a request, or message us on Telegram. First consultation is free.'}
           </motion.p>
         </motion.div>
 
@@ -113,12 +113,25 @@ export default function CTA() {
           </motion.div>
         </div>
 
+        {/* Telegram CTA Button */}
+        <div className="mt-12 flex justify-center">
+          <a
+            href="https://t.me/hosjpps"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-[#2AABEE] bg-[#2AABEE]/10 hover:bg-[#2AABEE]/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(42,171,238,0.2)]"
+          >
+            <Send className="w-5 h-5" />
+            {lang === 'ru' ? 'Написать в Telegram' : 'Message on Telegram'}
+          </a>
+        </div>
+
         {/* Contacts */}
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center">
           <div className="flex justify-center gap-8">
             <a href="https://t.me/hosjpps" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
               <Send className="w-5 h-5" />
-              <span className="font-medium">Telegram</span>
+              <span className="font-medium">@hosjpps</span>
             </a>
             <a href="mailto:abec_senjuro@mail.ru" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
               <Mail className="w-5 h-5" />

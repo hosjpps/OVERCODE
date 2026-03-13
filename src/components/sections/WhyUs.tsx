@@ -17,7 +17,7 @@ export default function WhyUs() {
             {lang === 'ru' ? 'Почему OVERCODE' : 'Why OVERCODE'}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-base md:text-lg max-w-2xl mx-auto">
-            {lang === 'ru' ? 'Один партнёр вместо десятка подрядчиков. Всё под ключ — от идеи до прибыли.' : 'One partner instead of ten contractors. Turnkey — from idea to profit.'}
+            {lang === 'ru' ? 'Один партнёр вместо десятка подрядчиков. Всё под ключ — быстро, прозрачно, с гарантией.' : 'One partner instead of ten contractors. Turnkey — fast, transparent, guaranteed.'}
           </motion.p>
         </motion.div>
 

@@ -14,10 +14,10 @@ export default function Cases() {
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-100px' }} className="text-center mb-16">
           <motion.span variants={fadeUp} className="inline-block font-mono text-accent-purple text-sm mb-4 tracking-wider">{'// case studies'}</motion.span>
           <motion.h2 variants={fadeUp} className="font-display font-bold text-[32px] md:text-[48px] text-text-primary mb-4">
-            {lang === 'ru' ? 'Кейсы и результаты' : 'Case Studies & Results'}
+            {lang === 'ru' ? 'Наши проекты' : 'Our Projects'}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-base md:text-lg max-w-2xl mx-auto">
-            {lang === 'ru' ? 'Реальные цифры из проектов, которые уже приносят прибыль нашим клиентам.' : 'Real numbers from projects already generating profit for our clients.'}
+            {lang === 'ru' ? 'Проекты, которые уже работают на бизнес наших клиентов.' : 'Projects already working for our clients\' businesses.'}
           </motion.p>
         </motion.div>
 

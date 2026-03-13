@@ -82,13 +82,13 @@ export default function ShowcaseReel() {
             {lang === 'ru' ? (<>Наши работы говорят{' '}<br className="hidden md:block" />громче слов</>) : (<>Our work speaks{' '}<br className="hidden md:block" />louder than words</>)}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-base md:text-lg max-w-xl">
-            {lang === 'ru' ? 'Каждый проект — это решение конкретной бизнес-задачи.' : 'Every project solves a real business challenge.'}
+            {lang === 'ru' ? 'От лендингов до AI-платформ. 5 проектов работают на доменах клиентов прямо сейчас.' : 'From landing pages to AI platforms. 5 projects live on client domains right now.'}
           </motion.p>
         </motion.div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-        {projects.slice(0, 3).map((project, i) => (
+        {[...projects.filter(p => p.live), projects.find(p => p.id === 8)!].slice(0, 6).map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
       </div>
