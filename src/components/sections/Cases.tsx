@@ -1,9 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { UtensilsCrossed, HeartPulse, ShoppingBag, Truck, Sparkles, Factory, GraduationCap, Car } from 'lucide-react';
 import { staggerContainer, fadeUp, cardReveal } from '@/lib/animations';
 import { cases, niches } from '@/lib/data';
 import { useLanguage } from '@/lib/language';
+
+const nicheIcons: Record<string, React.ElementType> = { UtensilsCrossed, HeartPulse, ShoppingBag, Truck, Sparkles, Factory, GraduationCap, Car };
 
 export default function Cases() {
   const { lang, t } = useLanguage();
@@ -38,16 +41,29 @@ export default function Cases() {
           ))}
         </motion.div>
 
-        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-100px' }} className="text-center mt-16">
-          <motion.p variants={fadeUp} className="text-text-secondary text-base mb-6">
+        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-100px' }} className="mt-20">
+          <motion.p variants={fadeUp} className="text-center text-text-secondary text-base mb-8">
             {lang === 'ru' ? 'Работаем с разными отраслями' : 'We work across industries'}
           </motion.p>
-          <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-3">
-            {niches.map((niche, i) => (
-              <span key={i} className="glass rounded-full px-5 py-2 text-text-secondary text-sm transition-all duration-300 hover:border-accent-purple hover:text-white cursor-default">
-                {lang === 'en' ? niche.en : niche.ru}
-              </span>
-            ))}
+          <motion.div variants={fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {niches.map((niche, i) => {
+              const Icon = nicheIcons[niche.icon];
+              return (
+                <div key={i} className="glass rounded-2xl p-5 transition-all duration-300 hover:border-accent-purple/30 hover:-translate-y-1 cursor-default group">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple/20 transition-colors flex-shrink-0">
+                      <Icon size={16} />
+                    </div>
+                    <h4 className="text-text-primary font-semibold text-base group-hover:text-accent-purple transition-colors">
+                      {lang === 'en' ? niche.en : niche.ru}
+                    </h4>
+                  </div>
+                  <p className="text-text-tertiary text-[13px] leading-relaxed">
+                    {lang === 'en' ? niche.descEn : niche.desc}
+                  </p>
+                </div>
+              );
+            })}
           </motion.div>
         </motion.div>
       </div>

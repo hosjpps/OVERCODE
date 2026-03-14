@@ -66,8 +66,8 @@ export default function PortfolioPage() {
           </motion.h1>
           <motion.p variants={fadeUp} className="text-text-secondary text-lg md:text-xl max-w-[600px] mb-12">
             {lang === 'ru'
-              ? `${projects.length} проектов в портфолио. Каждый — реальный бизнес с реальными результатами.`
-              : `${projects.length} projects in portfolio. Each one — a real business with real results.`}
+              ? `${projects.length} проектов в портфолио. 5 из них уже работают на доменах клиентов.`
+              : `${projects.length} projects in portfolio. 5 of them are already live on client domains.`}
           </motion.p>
         </motion.div>
 

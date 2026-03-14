@@ -48,7 +48,7 @@ export default function Services() {
                       <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] }} className="overflow-hidden">
                         <div className="pt-5 mt-5 border-t border-white/5">
                           <ul className="space-y-2 mb-5">
-                            {features.map((f, i) => (<li key={i} className="flex items-start gap-2 text-sm text-text-secondary"><span className="text-accent-purple mt-0.5 text-xs">&#9654;</span>{f}</li>))}
+                            {features.map((f, i) => (<li key={i} className="flex items-start gap-2 text-sm text-text-secondary"><span className="text-accent-purple mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-purple flex-shrink-0" />{f}</li>))}
                           </ul>
                           <div className="mb-4">
                             <span className="font-mono text-xs text-text-tertiary uppercase tracking-wider">Stack</span>

@@ -114,7 +114,7 @@ export default function PrivacyPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">9. Contact Us</h2>
                 <p>If you have questions about this Privacy Policy, contact us:</p>
-                <p className="mt-2">Email: <a href="mailto:abec_senjuro@mail.ru" className="text-accent-purple hover:underline">abec_senjuro@mail.ru</a></p>
+                <p className="mt-2">Email: <a href="mailto:info@overcode.ru" className="text-accent-purple hover:underline">info@overcode.ru</a></p>
                 <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>
@@ -193,7 +193,7 @@ export default function PrivacyPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">9. Контакты</h2>
                 <p>Если у вас есть вопросы по настоящей Политике конфиденциальности, свяжитесь с нами:</p>
-                <p className="mt-2">Email: <a href="mailto:abec_senjuro@mail.ru" className="text-accent-purple hover:underline">abec_senjuro@mail.ru</a></p>
+                <p className="mt-2">Email: <a href="mailto:info@overcode.ru" className="text-accent-purple hover:underline">info@overcode.ru</a></p>
                 <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>

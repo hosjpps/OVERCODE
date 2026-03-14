@@ -30,7 +30,7 @@ export default function TechStack() {
           variants={fadeUp}
           className="font-display font-bold text-[32px] md:text-[48px] text-text-primary"
         >
-          {lang === 'ru' ? 'Инструменты, которым мы доверяем' : 'Tools we trust'}
+          {lang === 'ru' ? 'На чём строим' : 'What we build with'}
         </motion.h2>
       </motion.div>
 

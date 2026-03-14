@@ -9,6 +9,7 @@ import Process from '@/components/sections/Process';
 import Cases from '@/components/sections/Cases';
 import WhyUs from '@/components/sections/WhyUs';
 import TechStack from '@/components/sections/TechStack';
+import Testimonials from '@/components/sections/Testimonials';
 import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
 import Footer from '@/components/layout/Footer';
@@ -41,6 +42,7 @@ export default function Home() {
         <WhyUs />
         <Divider />
         <TechStack />
+        <Testimonials />
         <Divider />
         <FAQ />
         <Divider />

@@ -59,7 +59,7 @@ export default function Process() {
             {lang === 'ru' ? 'Как мы работаем' : 'How we work'}
           </motion.h2>
           <motion.p variants={fadeUp} className="text-text-secondary text-lg md:text-xl max-w-[600px] mb-16 md:mb-20">
-            {lang === 'ru' ? 'Прозрачный процесс от первого звонка до запуска. Вы всегда знаете, на каком этапе проект.' : 'Transparent process from first call to launch. You always know the project stage.'}
+            {lang === 'ru' ? 'От звонка до запуска — 5 шагов. Вы видите прогресс на каждом.' : 'From call to launch — 5 steps. You see progress at every stage.'}
           </motion.p>
         </motion.div>
 

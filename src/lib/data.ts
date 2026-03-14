@@ -132,8 +132,8 @@ export const packages = [
   {
     id: 3, name: 'Трансформация', nameEn: 'Transformation',
     price: 'от 200 000 ₽', priceEn: 'from $2,700',
-    idealFor: 'Средний бизнес, полная цифровая экосистема',
-    idealForEn: 'Medium business, complete digital ecosystem',
+    idealFor: 'Средний бизнес, который хочет автоматизировать всё — от сайта до аналитики',
+    idealForEn: 'Medium business looking to automate everything — from website to analytics',
     features: ['Всё из пакета "Рост"', 'Веб-приложение / SaaS-платформа', 'AI-ассистент с обучением на ваших данных', 'Полная автоматизация процессов', 'BI-дашборды и прогнозная аналитика', '3 месяца поддержки и развития'],
     featuresEn: ['Everything from "Growth" package', 'Web application / SaaS platform', 'AI assistant trained on your data', 'Complete process automation', 'BI dashboards and predictive analytics', '3 months support and development'],
     timeline: '3 недели - 2 месяца', timelineEn: '3 weeks - 2 months', popular: false,
@@ -170,14 +170,14 @@ export const cases = [
 ];
 
 export const niches = [
-  { ru: 'HoReCa', en: 'HoReCa' },
-  { ru: 'Медицина', en: 'Healthcare' },
-  { ru: 'E-commerce', en: 'E-commerce' },
-  { ru: 'Логистика', en: 'Logistics' },
-  { ru: 'Бьюти', en: 'Beauty' },
-  { ru: 'Производство', en: 'Manufacturing' },
-  { ru: 'Образование', en: 'Education' },
-  { ru: 'Авто', en: 'Auto' },
+  { ru: 'HoReCa', en: 'HoReCa', icon: 'UtensilsCrossed', desc: 'Сайты, меню, бронирование, франшизы', descEn: 'Websites, menus, booking, franchises' },
+  { ru: 'Медицина', en: 'Healthcare', icon: 'HeartPulse', desc: 'Запись онлайн, каталоги услуг, AI-консультанты', descEn: 'Online booking, service catalogs, AI consultants' },
+  { ru: 'E-commerce', en: 'E-commerce', icon: 'ShoppingBag', desc: 'Магазины, каталоги, оплата, интеграции', descEn: 'Stores, catalogs, payments, integrations' },
+  { ru: 'Логистика', en: 'Logistics', icon: 'Truck', desc: 'Лендинги, CRM-автоматизация, дашборды', descEn: 'Landings, CRM automation, dashboards' },
+  { ru: 'Бьюти', en: 'Beauty', icon: 'Sparkles', desc: 'Салоны, запись, боты для напоминаний', descEn: 'Salons, booking, reminder bots' },
+  { ru: 'Производство', en: 'Manufacturing', icon: 'Factory', desc: 'B2B-сайты, каталоги продукции, заявки', descEn: 'B2B sites, product catalogs, lead forms' },
+  { ru: 'Образование', en: 'Education', icon: 'GraduationCap', desc: 'Платформы, курсы, личные кабинеты', descEn: 'Platforms, courses, student portals' },
+  { ru: 'Авто', en: 'Auto', icon: 'Car', desc: 'Лендинги, калькуляторы, AI-обработка заявок', descEn: 'Landings, calculators, AI lead processing' },
 ];
 
 export const whyUsCards = [
@@ -206,7 +206,7 @@ export const techLogos = {
 export const navLinks = [
   { href: '#services', label: 'Услуги', labelEn: 'Services' },
   { href: '#showcase', label: 'Портфолио', labelEn: 'Portfolio' },
-  { href: '#cases', label: 'Кейсы', labelEn: 'Cases' },
+  { href: '#cases', label: 'Проекты', labelEn: 'Projects' },
   { href: '#faq', label: 'FAQ', labelEn: 'FAQ' },
   { href: '#contact', label: 'Контакты', labelEn: 'Contacts' },
 ];
