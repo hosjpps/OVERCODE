@@ -29,7 +29,10 @@ export default function PortfolioPage() {
   const liveProjects = useMemo(() => projects.filter((p) => 'live' in p && p.live), []);
 
   const filtered = useMemo(
-    () => (active === 'all' ? projects : projects.filter((p) => p.category === active)),
+    () => {
+      const base = active === 'all' ? projects.filter((p) => !('live' in p && p.live)) : projects.filter((p) => p.category === active);
+      return base;
+    },
     [active]
   );
 

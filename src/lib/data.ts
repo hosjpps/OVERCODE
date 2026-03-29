@@ -16,8 +16,9 @@ export const projects = [
   { id: 15, name: 'Business Analyst', category: 'Веб-приложение', categoryEn: 'Web App', url: 'https://business-analyst-beige.vercel.app', description: 'Бизнес-аналитика', descriptionEn: 'Business analytics', screenshot: '/screenshots/business-analyst.webp' },
   { id: 16, name: 'AI Mastery Academy', category: 'Веб-приложение', categoryEn: 'Web App', url: 'https://ai-mastery-academy-five.vercel.app', description: 'Образовательная платформа', descriptionEn: 'Education platform', screenshot: '/screenshots/ai-mastery-academy.webp' },
   { id: 17, name: 'Pho Bo Mini App', category: 'Telegram Mini App', categoryEn: 'Telegram Mini App', url: 'https://t.me/Pho_bo_cafe_bot', description: 'Кафе в Telegram', descriptionEn: 'Cafe in Telegram' },
-  { id: 18, name: 'CaloriAI', category: 'AI-бот', categoryEn: 'AI Bot', url: 'https://t.me/CaloriAI1_bot', description: 'Подсчёт калорий через AI', descriptionEn: 'AI calorie tracking' },
-  { id: 19, name: 'Floristika', category: 'Лендинг', categoryEn: 'Landing', url: 'https://floristika-1.vercel.app', description: 'Цветочный магазин', descriptionEn: 'Flower shop', screenshot: '/screenshots/floristika.webp' },
+  { id: 18, name: 'Floristika', category: 'Лендинг', categoryEn: 'Landing', url: 'https://floristika-1.vercel.app', description: 'Цветочный магазин', descriptionEn: 'Flower shop', screenshot: '/screenshots/floristika.webp' },
+  { id: 19, name: 'ЛесПром', category: 'Многостраничник', categoryEn: 'Multi-page', url: 'https://lesprom-vyxa.vercel.app', description: 'Пиломатериалы от производителя', descriptionEn: 'Lumber from manufacturer', screenshot: '/screenshots/lesprom.webp' },
+  { id: 20, name: 'Свой Проект', category: 'Лендинг', categoryEn: 'Landing', url: 'https://your-project-two-rose.vercel.app', description: 'Оконная компания', descriptionEn: 'Window company', screenshot: '/screenshots/okna.webp' },
 ];
 
 export const services = [
