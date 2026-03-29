@@ -144,7 +144,7 @@ export default function CTA() {
               <Send className="w-5 h-5" />
               <span className="font-medium">@hosjpps</span>
             </a>
-            <a href="mailto:info@overcode.ru" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
+            <a href="mailto:info@overcode.space" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
               <Mail className="w-5 h-5" />
               <span className="font-medium">Email</span>
             </a>

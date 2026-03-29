@@ -42,11 +42,13 @@ export const metadata: Metadata = {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
   },
+  metadataBase: new URL('https://overcode.space'),
   openGraph: {
     title: 'OVERCODE — Digital Agency',
     description: 'Сайты, AI-боты, автоматизация — всё для роста вашего бизнеса. Первая консультация бесплатно.',
     type: 'website',
     locale: 'ru_RU',
+    url: 'https://overcode.space',
     images: [{ url: '/og.png', width: 1200, height: 630 }],
   },
   twitter: {

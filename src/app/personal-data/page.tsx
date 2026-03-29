@@ -155,7 +155,7 @@ export default function PersonalDataPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">11. Contact Information</h2>
                 <p>For questions regarding personal data processing:</p>
-                <p className="mt-2">Email: <a href="mailto:info@overcode.ru" className="text-accent-purple hover:underline">info@overcode.ru</a></p>
+                <p className="mt-2">Email: <a href="mailto:info@overcode.space" className="text-accent-purple hover:underline">info@overcode.space</a></p>
                 <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>
@@ -275,7 +275,7 @@ export default function PersonalDataPage() {
               <section>
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">11. Контактная информация</h2>
                 <p>По вопросам обработки персональных данных:</p>
-                <p className="mt-2">Email: <a href="mailto:info@overcode.ru" className="text-accent-purple hover:underline">info@overcode.ru</a></p>
+                <p className="mt-2">Email: <a href="mailto:info@overcode.space" className="text-accent-purple hover:underline">info@overcode.space</a></p>
                 <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
               </section>
             </>
