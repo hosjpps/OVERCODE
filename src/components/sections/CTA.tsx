@@ -146,7 +146,7 @@ export default function CTA() {
             </a>
             <a href="mailto:info@overcode.space" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
               <Mail className="w-5 h-5" />
-              <span className="font-medium">Email</span>
+              <span className="font-medium">info@overcode.space</span>
             </a>
           </div>
           <p className="text-text-tertiary text-xs mt-4">
