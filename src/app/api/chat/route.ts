@@ -78,7 +78,7 @@ AI и автоматизация:
 - Стек: Next.js, React, TypeScript, Tailwind CSS, Python, n8n, Claude AI, Telegram API
 - Работаем удалённо по всей России и СНГ. Возможна личная встреча в Москве.
 - Первая консультация бесплатна. Работаем по договору с поэтапной оплатой.
-- Контакт для связи: Telegram @hosjpps
+- Контакт для связи: Telegram @overcode_agency
 
 ## Чего НЕ делать
 - Не отвечай на вопросы, не связанные с OVERCODE. Вежливо перенаправь: "Я специализируюсь на вопросах по digital-продуктам. Давайте обсудим, чем могу помочь вашему бизнесу?"
@@ -162,7 +162,7 @@ Packages:
 - Stack: Next.js, React, TypeScript, Tailwind CSS, Python, n8n, Claude AI, Telegram API
 - We work remotely across Russia and CIS. In-person meetings available in Moscow.
 - First consultation is free. We work by contract with milestone-based payments.
-- Contact: Telegram @hosjpps
+- Contact: Telegram @overcode_agency
 
 ## What NOT to do
 - Don't answer questions unrelated to OVERCODE. Politely redirect: "I specialize in digital products. Let's discuss how I can help your business."
@@ -198,7 +198,7 @@ function smartFallback(lastMsg: string, isEn: boolean, messageCount: number): st
     }
     // Contact/order
     if (/contact|reach|write|call|order|start|begin|telegram/.test(msg)) {
-      return 'Great! The quickest way is to message us on Telegram @hosjpps — we reply within an hour. Or leave your phone/Telegram here and we\'ll reach out. First consultation is free!';
+      return 'Great! The quickest way is to message us on Telegram @overcode_agency — we reply within an hour. Or leave your phone/Telegram here and we\'ll reach out. First consultation is free!';
     }
     // Packages
     if (/package|plan|tier|bundle/.test(msg)) {
@@ -231,7 +231,7 @@ function smartFallback(lastMsg: string, isEn: boolean, messageCount: number): st
   }
   // Contact/order
   if (/контакт|связ|написа|позвон|заказ|начать|начн|телеграм/.test(msg)) {
-    return 'Отлично! Самый быстрый способ — написать в Telegram @hosjpps, ответим в течение часа. Или оставьте телефон/Telegram прямо здесь — мы свяжемся. Первая консультация бесплатна!';
+    return 'Отлично! Самый быстрый способ — написать в Telegram @overcode_agency, ответим в течение часа. Или оставьте телефон/Telegram прямо здесь — мы свяжемся. Первая консультация бесплатна!';
   }
   // Packages
   if (/пакет|тариф|комплекс/.test(msg)) {
@@ -239,6 +239,51 @@ function smartFallback(lastMsg: string, isEn: boolean, messageCount: number): st
   }
   // Default - qualifying question
   return 'Интересно! Чтобы предложить лучшее решение, расскажите немного о вашем бизнесе. Какая у вас ниша и какую задачу хотите решить?';
+}
+
+// ─── TELEGRAM NOTIFICATION ─────────────────────────────────────────────────
+
+async function notifyTelegram(messages: { role: string; content: string }[], botReply: string) {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!botToken || !chatId) return;
+
+  // Only notify after 3+ user messages (meaningful conversation)
+  const userMessages = messages.filter(m => m.role === 'user');
+  if (userMessages.length < 3) return;
+
+  // Check if this looks like a lead (contact info shared)
+  const allText = userMessages.map(m => m.content).join(' ').toLowerCase();
+  const hasContact = /[@+7\d{10,}|telegram|телеграм|почт|mail|email|whatsapp|вотсап]/.test(allText);
+  const hasBusinessInfo = /бизнес|компани|магазин|сайт|бот|автоматиз|лендинг|клиник|салон|кафе|ресторан|business|company|store|site|bot|automat|landing|clinic|salon|cafe|restaurant/.test(allText);
+
+  // Notify if contact shared OR meaningful business discussion
+  if (!hasContact && !hasBusinessInfo) return;
+
+  const summary = userMessages.slice(-5).map(m => `• ${m.content.slice(0, 120)}`).join('\n');
+
+  const text = [
+    '💬 *Диалог с AI-ботом на сайте*',
+    '',
+    `📋 *Сообщений от клиента:* ${userMessages.length}`,
+    hasContact ? '✅ Клиент оставил контакт!' : '⚠️ Контакт не оставлен',
+    '',
+    '*Последние сообщения клиента:*',
+    summary,
+    '',
+    '*Последний ответ бота:*',
+    botReply.slice(0, 200),
+    '',
+    `🕐 ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}`,
+  ].join('\n');
+
+  try {
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'Markdown' }),
+    });
+  } catch { /* silent */ }
 }
 
 // ─── API HANDLER ────────────────────────────────────────────────────────────
@@ -281,7 +326,9 @@ export async function POST(req: Request) {
         const data = await response.json();
 
         if (response.ok && data.content?.[0]?.text) {
-          return NextResponse.json({ reply: data.content[0].text });
+          const reply = data.content[0].text;
+          notifyTelegram(messages, reply).catch(() => {});
+          return NextResponse.json({ reply });
         }
 
         console.error('Claude API error:', data);
@@ -319,7 +366,9 @@ export async function POST(req: Request) {
         const data = await response.json();
 
         if (response.ok && data.choices?.[0]?.message?.content) {
-          return NextResponse.json({ reply: data.choices[0].message.content });
+          const reply = data.choices[0].message.content;
+          notifyTelegram(messages, reply).catch(() => {});
+          return NextResponse.json({ reply });
         }
 
         console.error('OpenAI/OpenRouter API error:', data);

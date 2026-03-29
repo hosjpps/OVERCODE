@@ -2,11 +2,14 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    const { name, contact, task } = await req.json();
+    const { name, contact, task, utm_source, utm_medium, utm_campaign, utm_content, utm_term } = await req.json();
 
     if (!name || !contact) {
       return NextResponse.json({ error: 'Name and contact are required' }, { status: 400 });
     }
+
+    const utmParts = [utm_source, utm_medium, utm_campaign, utm_content, utm_term].filter(Boolean);
+    const utmLine = utmParts.length > 0 ? `📊 *UTM:* ${utm_source || '—'} / ${utm_medium || '—'} / ${utm_campaign || '—'}` : '';
 
     const text = [
       '🔔 *Новая заявка с сайта OVERCODE*',
@@ -14,6 +17,7 @@ export async function POST(req: Request) {
       `👤 *Имя:* ${name}`,
       `📱 *Контакт:* ${contact}`,
       task ? `📝 *Задача:* ${task}` : '',
+      utmLine,
       '',
       `🕐 ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}`,
     ].filter(Boolean).join('\n');
