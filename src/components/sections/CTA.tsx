@@ -17,11 +17,19 @@ export default function CTA() {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
+    const params = new URLSearchParams(window.location.search);
+    const utm = {
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '',
+      utm_term: params.get('utm_term') || '',
+    };
     try {
       const res = await fetch('/api/form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, ...utm }),
       });
       if (!res.ok) throw new Error('Failed');
     } catch {
@@ -107,6 +115,9 @@ export default function CTA() {
                       ? (lang === 'ru' ? 'Отправляем...' : 'Sending...')
                       : (lang === 'ru' ? 'Отправить' : 'Send')}
                   </button>
+                  <p className="text-text-tertiary text-xs text-center mt-3">
+                    {lang === 'ru' ? '20+ бизнесов уже доверили нам digital · Среднее время ответа — 1 час' : '20+ businesses trust us with their digital · Average response time — 1 hour'}
+                  </p>
                 </form>
               </>
             )}

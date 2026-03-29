@@ -151,21 +151,21 @@ export const processSteps = [
 
 export const cases = [
   {
-    metric: '3', metricLabel: 'дня до запуска', metricLabelEn: 'days to launch',
-    description: 'Surikov Marketing — лендинг для маркетингового агентства. Полный цикл от брифа до деплоя за 3 дня с адаптивом и SEO.',
-    descriptionEn: 'Surikov Marketing — landing page for a marketing agency. Full cycle from brief to deploy in 3 days with responsive design and SEO.',
+    metric: '3', metricLabel: 'дня — от брифа до запуска', metricLabelEn: 'days — from brief to launch',
+    description: 'Surikov Marketing — лендинг для маркетингового агентства. Адаптив, SEO, подключение аналитики. Клиент запустил рекламу в день сдачи.',
+    descriptionEn: 'Surikov Marketing — landing page for a marketing agency. Responsive, SEO, analytics. Client launched ads on delivery day.',
     tags: ['Лендинг', 'SEO', 'Быстрый запуск'], tagsEn: ['Landing', 'SEO', 'Fast Launch'],
   },
   {
-    metric: '2', metricLabel: 'недели до запуска', metricLabelEn: 'weeks to launch',
-    description: 'Pho Bo Franchise — лендинг для продажи франшизы сети вьетнамских кафе. Интеграция CRM и Яндекс.Метрика.',
-    descriptionEn: 'Pho Bo Franchise — landing page for Vietnamese cafe franchise sales. CRM integration and Yandex.Metrica.',
-    tags: ['Лендинг', 'Франшиза', 'HoReCa'], tagsEn: ['Landing', 'Franchise', 'HoReCa'],
+    metric: '0→1', metricLabel: 'сайт с нуля для врача', metricLabelEn: 'website from scratch for a doctor',
+    description: 'Dr. Meksha — у клиента не было сайта вообще. Запись, услуги, отзывы пациентов. Теперь пациенты находят врача через поиск.',
+    descriptionEn: 'Dr. Meksha — client had no website at all. Booking, services, patient reviews. Now patients find the doctor via search.',
+    tags: ['Многостраничник', 'Медицина', 'SEO'], tagsEn: ['Multi-page', 'Healthcare', 'SEO'],
   },
   {
-    metric: '8', metricLabel: 'страниц с каталогом', metricLabelEn: 'pages with catalog',
-    description: 'Пивоварня — полноценный сайт с интерактивным каталогом сортов, фильтрацией, историей бренда и формой B2B-заказа.',
-    descriptionEn: 'Brewery — full website with interactive beer catalog, filtering, brand story, and B2B order form.',
+    metric: '8', metricLabel: 'страниц + каталог + B2B-заявки', metricLabelEn: 'pages + catalog + B2B leads',
+    description: 'ЛыткаринЪ — полноценный сайт пивоварни с каталогом сортов, фильтрацией, историей бренда и формой B2B-заказа.',
+    descriptionEn: 'ЛыткаринЪ Brewery — full website with beer catalog, filtering, brand story, and B2B order form.',
     tags: ['Многостраничник', 'Каталог', 'B2B'], tagsEn: ['Multi-page', 'Catalog', 'B2B'],
   },
 ];

@@ -38,11 +38,22 @@ export const metadata: Metadata = {
     'лендинг',
     'интернет-магазин',
   ],
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'OVERCODE — Digital Agency',
-    description: 'Мы пишем код. Вы считаете прибыль.',
+    description: 'Сайты, AI-боты, автоматизация — всё для роста вашего бизнеса. Первая консультация бесплатно.',
     type: 'website',
     locale: 'ru_RU',
+    images: [{ url: '/og.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OVERCODE — Digital Agency',
+    description: 'Сайты, AI-боты, автоматизация — всё для роста вашего бизнеса.',
+    images: ['/og.png'],
   },
 };
 

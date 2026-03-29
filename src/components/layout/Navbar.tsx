@@ -62,7 +62,7 @@ export default function Navbar() {
               <span className={`px-3 py-1 text-sm font-medium rounded-full transition-all ${lang === 'en' ? 'bg-white/[0.15] text-text-primary' : 'text-text-tertiary hover:text-text-secondary'}`}>EN</span>
             </button>
             <button onClick={() => scrollTo('#contact')} className="bg-gradient-to-r from-accent-purple to-accent-pink text-white text-sm font-semibold px-6 py-2.5 rounded-xl shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:scale-[1.03] active:scale-[0.98] transition-all cursor-pointer">
-              {lang === 'ru' ? 'Обсудить проект →' : 'Get in touch →'}
+              {lang === 'ru' ? 'Узнать стоимость →' : 'Get in touch →'}
             </button>
           </div>
 
@@ -109,7 +109,7 @@ export default function Navbar() {
                 <span className={`px-3 py-1 text-sm font-medium rounded-full transition-all ${lang === 'en' ? 'bg-white/[0.15] text-text-primary' : 'text-text-tertiary'}`}>EN</span>
               </button>
               <button onClick={() => scrollTo('#contact')} className="bg-gradient-to-r from-accent-purple to-accent-pink text-white font-semibold px-8 py-4 rounded-xl w-64 text-center cursor-pointer">
-                {lang === 'ru' ? 'Обсудить проект →' : 'Get in touch →'}
+                {lang === 'ru' ? 'Узнать стоимость →' : 'Get in touch →'}
               </button>
             </motion.div>
           </motion.div>

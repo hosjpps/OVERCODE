@@ -10,6 +10,7 @@ export default function Preloader() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (sessionStorage.getItem('preloaderShown')) return;
+    if (window.location.search.includes('utm_')) return;
     setShow(true);
     sessionStorage.setItem('preloaderShown', 'true');
 
