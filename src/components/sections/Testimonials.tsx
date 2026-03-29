@@ -119,27 +119,37 @@ export default function Testimonials() {
         </motion.div>
       </div>
 
-      {/* Row 1 — scrolls right */}
-      <div className="relative mb-6">
-        <div className="flex animate-marquee-right-slow whitespace-normal">
-          {[...row1, ...row1, ...row1].map((item, i) => (
-            <ReviewCard key={`r1-${i}`} item={item} lang={lang} />
+      {/* Mobile — horizontal scroll */}
+      <div className="md:hidden px-4">
+        <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory">
+          {[...row1, ...row2].map((item, i) => (
+            <div key={`m-${i}`} className="snap-start">
+              <ReviewCard item={item} lang={lang} />
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Row 2 — scrolls left */}
-      <div className="relative">
-        <div className="flex animate-marquee-left-slow whitespace-normal">
-          {[...row2, ...row2, ...row2].map((item, i) => (
-            <ReviewCard key={`r2-${i}`} item={item} lang={lang} />
-          ))}
+      {/* Desktop — marquee */}
+      <div className="hidden md:block">
+        <div className="relative mb-6">
+          <div className="flex animate-marquee-right-slow whitespace-normal">
+            {[...row1, ...row1, ...row1].map((item, i) => (
+              <ReviewCard key={`r1-${i}`} item={item} lang={lang} />
+            ))}
+          </div>
         </div>
+        <div className="relative">
+          <div className="flex animate-marquee-left-slow whitespace-normal">
+            {[...row2, ...row2, ...row2].map((item, i) => (
+              <ReviewCard key={`r2-${i}`} item={item} lang={lang} />
+            ))}
+          </div>
+        </div>
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-bg-primary to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-bg-primary to-transparent z-10" />
       </div>
-
-      {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-bg-primary to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-bg-primary to-transparent z-10" />
     </section>
   );
 }
