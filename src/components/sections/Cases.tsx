@@ -49,16 +49,14 @@ export default function Cases() {
             {niches.map((niche, i) => {
               const Icon = nicheIcons[niche.icon];
               return (
-                <div key={i} className="glass rounded-2xl p-5 transition-all duration-300 hover:border-accent-purple/30 hover:-translate-y-1 cursor-default group">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple/20 transition-colors flex-shrink-0">
-                      <Icon size={16} />
-                    </div>
-                    <p className="text-text-primary font-semibold text-base group-hover:text-accent-purple transition-colors">
-                      {lang === 'en' ? niche.en : niche.ru}
-                    </p>
+                <div key={i} className="glass rounded-2xl p-4 transition-all duration-300 hover:border-accent-purple/30 hover:-translate-y-1 cursor-default group">
+                  <div className="w-8 h-8 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple/20 transition-colors mb-3">
+                    <Icon size={16} />
                   </div>
-                  <p className="text-text-tertiary text-[13px] leading-relaxed">
+                  <p className="text-text-primary font-semibold text-sm group-hover:text-accent-purple transition-colors mb-1">
+                    {lang === 'en' ? niche.en : niche.ru}
+                  </p>
+                  <p className="text-text-tertiary text-xs leading-relaxed">
                     {lang === 'en' ? niche.descEn : niche.desc}
                   </p>
                 </div>
