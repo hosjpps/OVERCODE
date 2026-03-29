@@ -83,7 +83,7 @@ export default function ChatWidget({ onClose, showHeader = true, className = '' 
             <span className="text-[15px] font-semibold text-text-primary">OVERCODE AI</span>
           </div>
           {onClose && (
-            <button onClick={onClose} className="w-8 h-8 rounded-lg hover:bg-white/[0.06] flex items-center justify-center text-text-tertiary hover:text-text-primary transition-colors cursor-pointer">
+            <button onClick={onClose} aria-label="Close chat" className="w-8 h-8 rounded-lg hover:bg-white/[0.06] flex items-center justify-center text-text-tertiary hover:text-text-primary transition-colors cursor-pointer">
               <X className="w-4 h-4" />
             </button>
           )}
@@ -140,6 +140,7 @@ export default function ChatWidget({ onClose, showHeader = true, className = '' 
         <button
           onClick={sendMessage}
           disabled={!input.trim() || typing}
+          aria-label="Send message"
           className="w-10 h-10 rounded-xl bg-gradient-to-r from-accent-purple to-accent-pink flex items-center justify-center text-white disabled:opacity-50 cursor-pointer hover:brightness-110 transition-all"
         >
           <Send className="w-4 h-4" />

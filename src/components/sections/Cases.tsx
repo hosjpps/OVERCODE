@@ -54,9 +54,9 @@ export default function Cases() {
                     <div className="w-8 h-8 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple/20 transition-colors flex-shrink-0">
                       <Icon size={16} />
                     </div>
-                    <h4 className="text-text-primary font-semibold text-base group-hover:text-accent-purple transition-colors">
+                    <p className="text-text-primary font-semibold text-base group-hover:text-accent-purple transition-colors">
                       {lang === 'en' ? niche.en : niche.ru}
-                    </h4>
+                    </p>
                   </div>
                   <p className="text-text-tertiary text-[13px] leading-relaxed">
                     {lang === 'en' ? niche.descEn : niche.desc}

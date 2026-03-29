@@ -28,6 +28,7 @@ export default function StickyChat() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setOpen(true)}
+            aria-label="Open chat"
             className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-accent-purple to-accent-pink flex items-center justify-center text-white shadow-[0_0_20px_rgba(124,58,237,0.4)] animate-[sticky-pulse_2s_ease-in-out_infinite] cursor-pointer hover:brightness-110 transition-all"
           >
             <MessageCircle className="w-6 h-6" />

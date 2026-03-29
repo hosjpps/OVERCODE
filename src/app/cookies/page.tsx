@@ -22,7 +22,7 @@ export default function CookiesPage() {
               OVERCODE
             </Link>
           </div>
-          <button onClick={toggleLang} className="flex items-center bg-white/[0.06] rounded-full border border-white/10 p-0.5 cursor-pointer">
+          <button onClick={toggleLang} aria-label="Toggle language" className="flex items-center bg-white/[0.06] rounded-full border border-white/10 p-0.5 cursor-pointer">
             <span className={`px-3 py-1 text-sm font-medium rounded-full transition-all ${lang === 'ru' ? 'bg-white/[0.15] text-text-primary' : 'text-text-tertiary'}`}>RU</span>
             <span className={`px-3 py-1 text-sm font-medium rounded-full transition-all ${lang === 'en' ? 'bg-white/[0.15] text-text-primary' : 'text-text-tertiary'}`}>EN</span>
           </button>
