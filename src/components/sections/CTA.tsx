@@ -127,7 +127,7 @@ export default function CTA() {
         {/* Telegram CTA Button */}
         <div className="mt-12 flex justify-center">
           <a
-            href="https://t.me/hosjpps"
+            href="https://t.me/overcode_agency"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-[#2AABEE] bg-[#2AABEE]/10 hover:bg-[#2AABEE]/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(42,171,238,0.2)]"
@@ -140,9 +140,9 @@ export default function CTA() {
         {/* Contacts */}
         <div className="mt-8 text-center">
           <div className="flex justify-center gap-8">
-            <a href="https://t.me/hosjpps" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
+            <a href="https://t.me/overcode_agency" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
               <Send className="w-5 h-5" />
-              <span className="font-medium">@hosjpps</span>
+              <span className="font-medium">@overcode_agency</span>
             </a>
             <a href="mailto:info@overcode.space" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
               <Mail className="w-5 h-5" />

@@ -107,7 +107,7 @@ export default function CookiesPage() {
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">7. Contact Us</h2>
                 <p>If you have questions about our Cookie Policy:</p>
                 <p className="mt-2">Email: <a href="mailto:info@overcode.space" className="text-accent-purple hover:underline">info@overcode.space</a></p>
-                <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
+                <p>Telegram: <a href="https://t.me/overcode_agency" className="text-accent-purple hover:underline">@overcode_agency</a></p>
               </section>
             </>
           ) : (
@@ -178,7 +178,7 @@ export default function CookiesPage() {
                 <h2 className="font-display text-xl font-semibold text-text-primary mb-3">7. Контакты</h2>
                 <p>Если у вас есть вопросы по нашей Политике cookie:</p>
                 <p className="mt-2">Email: <a href="mailto:info@overcode.space" className="text-accent-purple hover:underline">info@overcode.space</a></p>
-                <p>Telegram: <a href="https://t.me/hosjpps" className="text-accent-purple hover:underline">@hosjpps</a></p>
+                <p>Telegram: <a href="https://t.me/overcode_agency" className="text-accent-purple hover:underline">@overcode_agency</a></p>
               </section>
             </>
           )}
