@@ -88,7 +88,7 @@ export default function ShowcaseReel() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-        {[...projects.filter(p => p.live), projects.find(p => p.id === 8)!].slice(0, 6).map((project, i) => (
+        {projects.filter(p => p.live).slice(0, 5).map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
       </div>
