@@ -303,10 +303,13 @@ export async function POST(req: Request) {
     // ── Try Anthropic Claude first ──
     if (anthropicKey) {
       try {
-        const claudeMessages = messages.slice(-20).map((m: { role: string; content: string }) => ({
+        const normalized = messages.slice(-20).map((m: { role: string; content: string }) => ({
           role: m.role === 'system' ? 'user' : m.role,
           content: m.content,
         }));
+        // Anthropic requires the first message to be from the user
+        const firstUserIdx = normalized.findIndex((m: { role: string }) => m.role === 'user');
+        const claudeMessages = firstUserIdx === -1 ? [] : normalized.slice(firstUserIdx);
 
         const response = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
@@ -316,7 +319,7 @@ export async function POST(req: Request) {
             'anthropic-version': '2023-06-01',
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-6-20250514',
+            model: 'claude-sonnet-4-6',
             max_tokens: 500,
             system: isEn ? SYSTEM_PROMPT_EN : SYSTEM_PROMPT_RU,
             messages: claudeMessages,
@@ -382,7 +385,8 @@ export async function POST(req: Request) {
     const reply = smartFallback(lastMsg, isEn, messages.length);
     return NextResponse.json({ reply });
 
-  } catch {
+  } catch (e) {
+    console.error('Chat route error:', e);
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }
