@@ -334,8 +334,15 @@ async function notifyTelegram(messages: { role: string; content: string }[], bot
 // ─── API HANDLER ────────────────────────────────────────────────────────────
 
 export async function POST(req: Request) {
+  let body: { messages?: unknown; lang?: string };
   try {
-    const { messages, lang = 'ru' } = await req.json();
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+  }
+
+  try {
+    const { messages, lang = 'ru' } = body as { messages: { role: string; content: string }[]; lang?: string };
     const isEn = lang === 'en';
 
     if (!messages || !Array.isArray(messages)) {
