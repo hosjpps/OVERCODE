@@ -243,45 +243,90 @@ function smartFallback(lastMsg: string, isEn: boolean, messageCount: number): st
 
 // ─── TELEGRAM NOTIFICATION ─────────────────────────────────────────────────
 
+const BUSINESS_KEYWORDS = /бизнес|компани|магазин|сайт|бот|автоматиз|лендинг|клиник|салон|кафе|ресторан|business|company|store|site|bot|automat|landing|clinic|salon|cafe|restaurant/i;
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function extractContacts(text: string): { email?: string; phone?: string; tg?: string } {
+  const email = text.match(/\b[\w.+-]+@[\w-]+\.[a-zA-Z]{2,}\b/)?.[0];
+  // Strip email so its "@" doesn't get parsed as a Telegram handle and its digits as a phone
+  const cleaned = email ? text.replace(email, '') : text;
+  const tg = cleaned.match(/@([a-zA-Z][a-zA-Z0-9_]{4,31})\b/)?.[0];
+  let phone: string | undefined;
+  const phoneMatch = cleaned.match(/\+?\d[\d\s\-()]{8,20}/);
+  if (phoneMatch) {
+    const digits = phoneMatch[0].replace(/\D/g, '');
+    if (digits.length >= 10 && digits.length <= 15) phone = phoneMatch[0].trim();
+  }
+  return { email, phone, tg };
+}
+
+function hasAnyContact(c: { email?: string; phone?: string; tg?: string }): boolean {
+  return Boolean(c.email || c.phone || c.tg);
+}
+
 async function notifyTelegram(messages: { role: string; content: string }[], botReply: string) {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (!botToken || !chatId) return;
 
-  // Only notify after 3+ user messages (meaningful conversation)
   const userMessages = messages.filter(m => m.role === 'user');
-  if (userMessages.length < 3) return;
+  if (userMessages.length === 0) return;
 
-  // Check if this looks like a lead (contact info shared)
-  const allText = userMessages.map(m => m.content).join(' ').toLowerCase();
-  const hasContact = /[@+7\d{10,}|telegram|телеграм|почт|mail|email|whatsapp|вотсап]/.test(allText);
-  const hasBusinessInfo = /бизнес|компани|магазин|сайт|бот|автоматиз|лендинг|клиник|салон|кафе|ресторан|business|company|store|site|bot|automat|landing|clinic|salon|cafe|restaurant/.test(allText);
+  const lastMsg = userMessages[userMessages.length - 1].content;
+  const earlierText = userMessages.slice(0, -1).map(m => m.content).join(' ');
+  const allText = userMessages.map(m => m.content).join(' ');
 
-  // Notify if contact shared OR meaningful business discussion
-  if (!hasContact && !hasBusinessInfo) return;
+  const lastContacts = extractContacts(lastMsg);
+  const hadContactBefore = hasAnyContact(extractContacts(earlierText));
+  const isFreshContact = hasAnyContact(lastContacts) && !hadContactBefore;
 
-  const summary = userMessages.slice(-5).map(m => `• ${m.content.slice(0, 120)}`).join('\n');
+  // One-shot warm-lead ping at message #3 if business is being discussed but no contact yet
+  const isWarmLeadCheckpoint =
+    userMessages.length === 3 &&
+    !hadContactBefore &&
+    !hasAnyContact(lastContacts) &&
+    BUSINESS_KEYWORDS.test(allText);
 
-  const text = [
-    '💬 *Диалог с AI-ботом на сайте*',
+  if (!isFreshContact && !isWarmLeadCheckpoint) return;
+
+  const contactLines: string[] = [];
+  if (lastContacts.tg) contactLines.push(`Telegram: ${escapeHtml(lastContacts.tg)}`);
+  if (lastContacts.phone) contactLines.push(`Телефон: ${escapeHtml(lastContacts.phone)}`);
+  if (lastContacts.email) contactLines.push(`Email: ${escapeHtml(lastContacts.email)}`);
+
+  const summary = userMessages
+    .slice(-5)
+    .map(m => `• ${m.content.slice(0, 200)}`)
+    .join('\n');
+
+  const header = isFreshContact
+    ? '🟢 <b>Новый лид — клиент оставил контакт</b>'
+    : '🟡 <b>Тёплый диалог (контакт пока не оставлен)</b>';
+
+  const lines = [header, ''];
+  if (contactLines.length) {
+    lines.push('<b>Контакт:</b>', ...contactLines, '');
+  }
+  lines.push(
+    `<b>Сообщений от клиента:</b> ${userMessages.length}`,
     '',
-    `📋 *Сообщений от клиента:* ${userMessages.length}`,
-    hasContact ? '✅ Клиент оставил контакт!' : '⚠️ Контакт не оставлен',
+    '<b>Последние сообщения клиента:</b>',
+    escapeHtml(summary),
     '',
-    '*Последние сообщения клиента:*',
-    summary,
-    '',
-    '*Последний ответ бота:*',
-    botReply.slice(0, 200),
+    '<b>Последний ответ бота:</b>',
+    escapeHtml(botReply.slice(0, 400)),
     '',
     `🕐 ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}`,
-  ].join('\n');
+  );
 
   try {
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'Markdown' }),
+      body: JSON.stringify({ chat_id: chatId, text: lines.join('\n'), parse_mode: 'HTML' }),
     });
   } catch { /* silent */ }
 }
